@@ -1,18 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CuestionarioComponent } from './cuestionario/cuestionario.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CuestionarioService } from './cuestionario/cuestionario.service';
+import { FormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+
+const routes: Routes = [
+  {path: '', component: CuestionarioComponent, pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CuestionarioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CuestionarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
