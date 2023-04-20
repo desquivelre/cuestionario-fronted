@@ -9,8 +9,9 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  {path: '', component: CuestionarioComponent, pathMatch: 'full'},
-  {path: 'cuestionario/:id', component: CuestionarioComponent, pathMatch: 'full'}
+  {path: '', redirectTo: '/cuestionario', pathMatch: 'full'},
+  {path: 'cuestionario', component: CuestionarioComponent},
+  {path: 'cuestionario/:id', component: CuestionarioComponent}
 ];
 
 @NgModule({

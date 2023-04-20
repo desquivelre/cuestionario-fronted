@@ -1,109 +1,44 @@
-<!-- <h1>{{detalleCuestionarios}}</h1> -->
 <h2>Cuestionario</h2>
 
 <h4>Bienvenido empresa 1</h4>
-<!-- <table>
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Email</th>
-    <th>Fecha de creación</th>
-    <th>Editar</th>
-    <th>Eliminar</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>{{ detallecuestionario.id }}</td>
-    <td>{{ detallecuestionario.crespuestamil }}</td>
+
+<div *ngFor="let pregunta of detallecuestionarios; let i = index" [hidden]="i !==preguntaActual">
+  {{pregunta.pregunta.npregunta}}
   
-  </tr>
-  </tbody>
-</table> -->
+  <div id="checkbox-list">
+    <div>
+      <label>
+        <input type="checkbox" [value]="1" name="check" (change)="onChange('1')" (change)="onCheckboxChange($event)"> No definido
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [value]="2" name="check" (change)="onChange('2')" (change)="onCheckboxChange($event)"> MIL 0
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [value]="3" name="check" (change)="onChange('3')" (change)="onCheckboxChange($event)"> MIL 1
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [value]="4" name="check" (change)="onChange('4')" (change)="onCheckboxChange($event)"> MIL 2
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" [value]="5" name="check" (change)="onChange('5')" (change)="onCheckboxChange($event)"> MIL 3
+      </label>
+    </div>
+  </div>
 
+  <div class="form-group row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button>
+    </div>
+  </div>
 
+</div>
 
-
-<!-- 
-<table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Email</th>
-      <th>Fecha de creación</th>
-      <th>Editar</th>
-      <th>Eliminar</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let detallecuestionario of detallecuestionarios">
-      <td>{{ detallecuestionario.id }}</td>
-      <td>{{ detallecuestionario.pregunta.npregunta }}</td>
-      <td>{{ detallecuestionario.respuestamil.nrespuestamil}}</td>
-      <td>{{ detallecuestionario.pregunta.subcategoria.siglasubcategoria}}</td>
-    
-    </tr>
-    </tbody>
-</table> -->
-
-
-
-
-
-
-<!-- <h1>{{detallecuestionarios.titulo}}</h1>
-<p>{{detalleCuestionario.descripcion}}</p> -->
-<ol>
-  <li *ngFor="let pregunta of detallecuestionarios">
-    {{pregunta.pregunta.npregunta}}
-    <ul>
-      <li>
-        <label>
-          <input type="radio" name="No definido" value="1"> No definido
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="MIL 0" value="2"> MIL 0
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="MIL 1" value="3"> MIL 1
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="MIL 2" value="4"> MIL 2
-        </label>
-      </li>
-      <li>
-        <label>
-          <input type="radio" name="MIL 3" value="5"> MIL 3
-        </label>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-
-
-
-<!-- <p>{{detallecuestionarios.pregunta.npregunta}}</p>
-<ol>
-  <li *ngFor="let pregunta of detalleCuestionario.preguntas">
-    {{pregunta.npregunta}}
-    <ul>
-      <li *ngFor="let respuesta of pregunta.respuestas">
-        <label>
-          <input type="radio" name="{{pregunta.id}}" value="{{respuesta.id}}">
-          {{respuesta.texto}}
-        </label>
-      </li>
-    </ul>
-  </li>
-</ol> -->
+{{respuestaSeleccionada}}
