@@ -9,7 +9,8 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  {path: '', component: CuestionarioComponent, pathMatch: 'full'}
+  {path: '', component: CuestionarioComponent, pathMatch: 'full'},
+  {path: 'cuestionario/:id', component: CuestionarioComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

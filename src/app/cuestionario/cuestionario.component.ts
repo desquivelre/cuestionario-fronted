@@ -24,8 +24,6 @@ export class CuestionarioComponent implements OnInit {
     //   }
     // );
 
-
-
     this.cuestionarioService.getDetalleCuestionarios().subscribe(
       (detallecuestionarios) => {
         this.detallecuestionarios = detallecuestionarios
