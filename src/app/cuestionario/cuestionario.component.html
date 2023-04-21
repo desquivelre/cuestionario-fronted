@@ -1,44 +1,60 @@
-<h2>Cuestionario</h2>
-
-<h4>Bienvenido empresa 1</h4>
-
-<div *ngFor="let pregunta of detallecuestionarios; let i = index" [hidden]="i !==preguntaActual">
-  {{pregunta.pregunta.npregunta}}
+<div class="quiz-container" id="quiz" *ngFor="let pregunta of preguntas; let i = index" [hidden]="i !==preguntaActual">
   
-  <div id="checkbox-list">
-    <div>
-      <label>
-        <input type="checkbox" [value]="1" name="check" (change)="onChange('1')" (change)="onCheckboxChange($event)"> No definido
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" [value]="2" name="check" (change)="onChange('2')" (change)="onCheckboxChange($event)"> MIL 0
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" [value]="3" name="check" (change)="onChange('3')" (change)="onCheckboxChange($event)"> MIL 1
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" [value]="4" name="check" (change)="onChange('4')" (change)="onCheckboxChange($event)"> MIL 2
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" [value]="5" name="check" (change)="onChange('5')" (change)="onCheckboxChange($event)"> MIL 3
-      </label>
+  <div class="quiz-header">
+
+    {{pregunta.subcategoria.categoria.funcion.siglafuncion}}
+    {{pregunta.subcategoria.categoria.funcion.nfuncion}}
+    
+    <br>
+
+    {{pregunta.subcategoria.categoria.siglacategoria}}
+    {{pregunta.subcategoria.categoria.ncategoria}}
+
+    <br>
+
+    {{pregunta.subcategoria.siglasubcategoria}}
+    {{pregunta.subcategoria.nsubcategoria}}
+
+    <br>
+
+    <h2 id="question">{{pregunta.npregunta}}</h2>
+    
+    <div id="checkbox-list">
+      <div>
+        <label>
+          <input type="checkbox" [value]="1" name="check" class="answer" (change)="onChange('1')" (change)="onCheckboxChange($event)"> No definido
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [value]="2" name="check" class="answer" (change)="onChange('2')" (change)="onCheckboxChange($event)"> MIL 0
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [value]="3" name="check" class="answer" (change)="onChange('3')" (change)="onCheckboxChange($event)"> MIL 1
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [value]="4" name="check" class="answer" (change)="onChange('4')" (change)="onCheckboxChange($event)"> MIL 2
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [value]="5" name="check" class="answer" (change)="onChange('5')" (change)="onCheckboxChange($event)"> MIL 3
+        </label>
+      </div>
     </div>
   </div>
 
-  <div class="form-group row">
-    <div class="col-sm-6">
-      <button class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button>
+  <div class="form-group row" id="buttonid">
+    <div class="col-sm-6" id="buttonsubid">
+      <button id="submit" role="button" (click)="siguientePregunta(i)">Siguiente</button>
+      <!-- <button id="submit" class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button> -->
     </div>
   </div>
 
 </div>
 
-{{respuestaSeleccionada}}
+<!-- {{respuestaSeleccionada}} -->
