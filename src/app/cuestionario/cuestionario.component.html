@@ -1,60 +1,70 @@
-<div class="quiz-container" id="quiz" *ngFor="let pregunta of preguntas; let i = index" [hidden]="i !==preguntaActual">
-  
-  <div class="quiz-header">
-
-    {{pregunta.subcategoria.categoria.funcion.siglafuncion}}
-    {{pregunta.subcategoria.categoria.funcion.nfuncion}}
+<div class="contenedor">
+  <div class="quiz-container" id="quiz" *ngFor="let pregunta of preguntas; let i = index" [hidden]="i !==preguntaActual">
     
-    <br>
+    <div class="quiz-header">
 
-    {{pregunta.subcategoria.categoria.siglacategoria}}
-    {{pregunta.subcategoria.categoria.ncategoria}}
+      <!-- {{pregunta.subcategoria.categoria.funcion.siglafuncion}}
+      {{pregunta.subcategoria.categoria.funcion.nfuncion}}
+      
+      <br>
 
-    <br>
+      {{pregunta.subcategoria.categoria.siglacategoria}}
+      {{pregunta.subcategoria.categoria.ncategoria}}
 
-    {{pregunta.subcategoria.siglasubcategoria}}
-    {{pregunta.subcategoria.nsubcategoria}}
+      <br>
 
-    <br>
+      {{pregunta.subcategoria.siglasubcategoria}}
+      {{pregunta.subcategoria.nsubcategoria}} -->
 
-    <h2 id="question">{{pregunta.npregunta}}</h2>
-    
-    <div id="checkbox-list">
-      <div>
-        <label>
-          <input type="checkbox" [value]="1" name="check" class="answer" (change)="onChange('1')" (change)="onCheckboxChange($event)"> No definido
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" [value]="2" name="check" class="answer" (change)="onChange('2')" (change)="onCheckboxChange($event)"> MIL 0
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" [value]="3" name="check" class="answer" (change)="onChange('3')" (change)="onCheckboxChange($event)"> MIL 1
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" [value]="4" name="check" class="answer" (change)="onChange('4')" (change)="onCheckboxChange($event)"> MIL 2
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" [value]="5" name="check" class="answer" (change)="onChange('5')" (change)="onCheckboxChange($event)"> MIL 3
-        </label>
+      <br>
+
+      <h6>{{pregunta.siglapregunta}}</h6>
+      <h4 id="question">{{pregunta.npregunta}}</h4>
+      
+      <div id="checkbox-list">
+        <div class="alternativa">
+          <label>
+            <input type="checkbox" [value]="1" name="check" class="answer" (change)="onChange('1')" (change)="onCheckboxChange($event)"> No se ha implementado
+          </label>
+        </div>
+        <div class="alternativa">
+          <label>
+            <input type="checkbox" [value]="2" name="check" class="answer" (change)="onChange('2')" (change)="onCheckboxChange($event)"> Implementado parcialmente
+          </label>
+        </div>
+        <div class="alternativa"> 
+          <label>
+            <input type="checkbox" [value]="3" name="check" class="answer" (change)="onChange('3')" (change)="onCheckboxChange($event)"> Implementado en gran medida
+          </label>
+        </div>
+        <div class="alternativa">
+          <label>
+            <input type="checkbox" [value]="4" name="check" class="answer" (change)="onChange('4')" (change)="onCheckboxChange($event)"> Totalmente implementado
+          </label>
+        </div>
+        <!-- <div>
+          <label>
+            <input type="checkbox" [value]="5" name="check" class="answer" (change)="onChange('5')" (change)="onCheckboxChange($event)"> MIL 3
+          </label>
+        </div> -->
       </div>
     </div>
-  </div>
 
-  <div class="form-group row" id="buttonid">
-    <div class="col-sm-6" id="buttonsubid">
-      <button id="submit" role="button" (click)="siguientePregunta(i)">Siguiente</button>
-      <!-- <button id="submit" class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button> -->
+    <div class="form-group row" id="buttonid" *ngIf="i<36">
+      <div class="col-sm-6" id="buttonsubid">
+        <button id="submit" role="button" (click)="siguientePregunta(i)">Siguiente</button>
+        <!-- <button id="submit" class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button> -->
+      </div>
     </div>
-  </div>
 
+    <div class="form-group row" id="buttonid" *ngIf="i==36">
+      <div class="col-sm-6" id="buttonsubid">
+        <button id="submit" class="button2" role="button" (click)="siguientePregunta2(i)">Finalizar</button>
+        <!-- <button id="submit" class="btn btn-primary" role="button" (click)="siguientePregunta(i)">Siguiente</button> -->
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- {{respuestaSeleccionada}} -->

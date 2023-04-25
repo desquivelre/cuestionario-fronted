@@ -10,12 +10,14 @@ import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'instrucciones', component: InstruccionesComponent},
-  {path: 'cuestionario/:usuario/:cuestionario', component: CuestionarioComponent}
+  {path: 'cuestionario/:usuario/:cuestionario', component: CuestionarioComponent},
+  {path: 'reporte/:usuario/:cuestionario:', component: ReporteComponent}
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     CuestionarioComponent,
     LoginComponent,
-    InstruccionesComponent
+    InstruccionesComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,

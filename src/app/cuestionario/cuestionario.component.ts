@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CuestionarioService } from './cuestionario.service';
 import { DetalleCuestionario } from './detallecuestionario';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pregunta } from './pregunta';
+
+
 
 @Component({
   selector: 'app-cuestionario',
@@ -20,7 +22,7 @@ export class CuestionarioComponent implements OnInit {
   public preguntas: Pregunta[];
   public pregunta: Pregunta;
 
-  constructor(private cuestionarioService: CuestionarioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute) { 
+  constructor(private cuestionarioService: CuestionarioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router) { 
     this.form = this.fb.group({
       checkArray: this.fb.array([]),
     })
@@ -92,20 +94,6 @@ export class CuestionarioComponent implements OnInit {
 
     let cpregunta = this.preguntas[i].cpregunta;
 
-    // let updateNuevo = false;
-    
-    // for(let detallecuestionario of this.detallecuestionarios)
-    // {
-    //   if(detallecuestionario.cusuario == this.cusuario && detallecuestionario.ccuestionario == this.ccuestionario && detallecuestionario.cpregunta == cpregunta)
-    //   {
-    //     updateNuevo = true;
-    //   }
-    // }
-
-    // if(updateNuevo == false){
-
-    // }
-
     this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
       (detallecuestionariotemp) => {
         this.detallecuestionariotemp = detallecuestionariotemp;
@@ -114,6 +102,31 @@ export class CuestionarioComponent implements OnInit {
 
     this.respuestaSeleccionada = '1';
   }
+
+  public siguientePregunta2(i:number){
+    this.preguntaActual++;
+    console.log(this.preguntas[i])
+
+
+    this.activatedRoute.params.subscribe(params=>{
+      this.cusuario = Number(params['usuario']);
+      this.ccuestionario = Number(params['cuestionario']);
+    })
+
+    let cpregunta = this.preguntas[i].cpregunta;
+
+    this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
+      (detallecuestionariotemp) => {
+        this.detallecuestionariotemp = detallecuestionariotemp;
+      }
+    );
+
+    this.respuestaSeleccionada = '1';
+
+    this.router.navigateByUrl(`/reporte/${this.cusuario}/${this.ccuestionario}`);
+
+  }
+
 
   // FIN GUARDAR RESPUESTA
 

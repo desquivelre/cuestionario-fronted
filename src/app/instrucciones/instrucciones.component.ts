@@ -9,11 +9,15 @@ import { Router, ActivatedRoute} from '@angular/router';
 export class InstruccionesComponent {
 
   private codigousuario: Number;
+  private ccuestionario: Number;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   comenzarCuestionario() {
-    this.router.navigateByUrl(`/cuestionario/${this.codigousuario}/1`);
+
+    this.ccuestionario = 1;
+
+    this.router.navigateByUrl(`/cuestionario/${this.codigousuario}/${this.ccuestionario}`);
   }
 
   ngOnInit() {
