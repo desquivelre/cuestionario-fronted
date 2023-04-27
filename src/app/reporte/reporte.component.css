@@ -1,58 +1,93 @@
 *{
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
+.agradecimiento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-left: 60px;
+  padding-right: 60px;
+}
   
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-  }
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
   
-  p {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  button {
-    background-color: firebrick;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: darkred;
-  }
-  
-  .charts{
-    display: flex;
-    flex-direction: column;
-  }
+p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-  .radio-charts{
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    justify-content: space-around;
-    gap: 70px;
+button {
+  background-color: firebrick;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    margin-bottom: 50px;
-  }
+button:hover {
+  background-color: darkred;
+}
 
-  .principal-chart{
-    padding-bottom: 50px;
-  }
+.charts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.radio-charts{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  gap: 35px;
+  height: auto;
+
+  margin-bottom: 50px;
+
+}
+
+.radio-celda{
+  display: inline-block;
+  position: relative;
+  width: 600px;
+}
+
+.textoizq{
+
+  border: 1px solid purple;
+  width: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textoizq h3{
+  
+}
+
+.fila{
+  display: flex;
+  flex-direction: row;
+}
+
+.celda{
+  display: inline-block;
+  position: relative;
+  width: 150px;
+
+  border: 1px solid blue;
+} 

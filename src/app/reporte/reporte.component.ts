@@ -49,6 +49,9 @@ export class ReporteComponent {
               pointHoverBorderColor: 'rgb(255, 99, 132)'
             }
           ]
+        },
+        options:{
+          responsive: true
         }
       }
     );
@@ -72,24 +75,50 @@ export class ReporteComponent {
               pointHoverBorderColor: 'rgb(54, 162, 235)'
             }
           ]
+        },
+        options:{
+          responsive: true
         }
       }
     );
+
+    // EJEMPLO CHART CON LEYENDA
+    // const chart2 = new Chart(
+    //   "chart2", 
+    //   {
+    //     type: 'doughnut',
+    //     data: {
+    //       labels: [
+    //         'No se ha implementado',
+    //         'Implementado parcialmente',
+    //         'Implementado en gran medida',
+    //         'Totalmente implementado'
+    //       ],
+    //       datasets: [{
+    //         label: 'My First Dataset',
+    //         data: [300, 50, 100, 200],
+    //         backgroundColor: [
+    //           'rgb(255, 99, 132)',
+    //           'rgb(54, 162, 235)',
+    //           'rgb(255, 205, 86)',
+    //           'rgb(150, 80, 235)'
+    //         ],
+    //         hoverOffset: 4
+    //       }]
+    //     },
+    //     options:{
+    //       responsive: true
+    //     }
+    //   }
+    // );
 
     const chart1 = new Chart(
       "chart1", 
       {
         type: 'doughnut',
         data: {
-          labels: [
-            'No se ha implementado',
-            'Implementado parcialmente',
-            'Implementado en gran medida',
-            'Totalmente implementado'
-          ],
           datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100, 200],
+            data: [0, 1, 1, 1],
             backgroundColor: [
               'rgb(255, 99, 132)',
               'rgb(54, 162, 235)',
@@ -99,10 +128,33 @@ export class ReporteComponent {
             hoverOffset: 4
           }]
         },
+        options:{
+          responsive: true
+        }
       }
     );
 
-
+    const chart2 = new Chart(
+      "chart2", 
+      {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [0, 1, 0, 1],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)',
+              'rgb(150, 80, 235)'
+            ],
+            hoverOffset: 4
+          }]
+        },
+        options:{
+          responsive: true
+        }
+      }
+    );
   }
 
   salir() {
