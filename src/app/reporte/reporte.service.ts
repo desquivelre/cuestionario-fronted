@@ -16,8 +16,8 @@ export class ReporteService {
 
   constructor(private http: HttpClient) { }
 
-  getDetalleCuestionarios2(): Observable<DetalleCuestionario[]> {
-    return this.http.get<DetalleCuestionario[]>(`${this.urlEndPointListDetalleCuestionarioAll}/1/1`);
+  getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number): Observable<DetalleCuestionario[]> {
+    return this.http.get<DetalleCuestionario[]>(`${this.urlEndPointListDetalleCuestionarioAll}/${ccuestionario}/${cusuario}`);
   }
 
 }
