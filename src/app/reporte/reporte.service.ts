@@ -16,8 +16,12 @@ export class ReporteService {
 
   constructor(private http: HttpClient) { }
 
-  getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number): Observable<DetalleCuestionario[]> {
-    return this.http.get<DetalleCuestionario[]>(`${this.urlEndPointListDetalleCuestionarioAll}/${ccuestionario}/${cusuario}`);
+  // getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number): Observable<DetalleCuestionario[]> {
+  //   return this.http.get<DetalleCuestionario[]>(`${this.urlEndPointListDetalleCuestionarioAll}/${ccuestionario}/${cusuario}`);
+  // }
+  getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number){
+    const url = `http://localhost:8080/api/listar-detallecuestionarios/${ccuestionario}/${cusuario}`;
+    return this.http.get(url);
   }
 
 }

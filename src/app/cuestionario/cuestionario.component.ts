@@ -137,11 +137,11 @@ export class CuestionarioComponent implements OnInit {
       }
     );
 
-    this.cuestionarioService.getDetalleCuestionarios().subscribe(
-      (detallecuestionarios) => {
-        this.detallecuestionarios = detallecuestionarios;
-      }
-    );
+    // this.cuestionarioService.getDetalleCuestionarios().subscribe(
+    //   (detallecuestionarios) => {
+    //     this.detallecuestionarios = detallecuestionarios;
+    //   }
+    // );
 
     // this.cuestionarioService.getDetalleCuestionario().subscribe(
     //   (detallecuestionario) => {

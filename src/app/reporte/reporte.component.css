@@ -46,13 +46,24 @@ button:hover {
   width: 100%;
 }
 
+.vermas{
+  position: absolute;
+  font-size: 18px;
+  bottom: 35px;
+  color: gray;
+}
+
+.charts h1{
+  margin-bottom: 65px;
+}
+
 .radio-charts{
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   justify-content: space-around;
-  gap: 35px;
+  gap: 0px;
   height: auto;
 
   margin-bottom: 50px;
@@ -62,13 +73,19 @@ button:hover {
 .radio-celda{
   display: inline-block;
   position: relative;
-  width: 600px;
+  width: 400px;
+}
+
+.radio-celda h2{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 45px;
 }
 
 .textoizq{
 
-  border: 1px solid purple;
-  width: 150px;
+  /* border: 1px solid purple; */
+  width: 115px;
 
   display: flex;
   align-items: center;
@@ -87,7 +104,48 @@ button:hover {
 .celda{
   display: inline-block;
   position: relative;
-  width: 150px;
+  width: 115px;
+  margin: 10px;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 } 
+
+.celda h5{
+  text-align: center;
+  padding-top: 13px;
+
+  font-size: 15px;
+}
+
+.textoizq h5{
+  margin: 0;
+}
+
+.tabla{
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.fila{
+  display: flex;
+  /* width: 1150px; */
+  justify-content: center;
+}
+
+.contenedortabla{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.contenedortabla h2{
+  text-align: center;
+  margin-bottom: 45px;
+
+  font-size: 25px;
+}

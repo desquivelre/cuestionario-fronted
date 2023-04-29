@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { ReporteService } from './reporte/reporte.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -36,7 +37,8 @@ const routes: Routes = [
   ],
   providers: [
     CuestionarioService,
-    LoginService
+    LoginService,
+    ReporteService
   ],
   bootstrap: [AppComponent]
 })
