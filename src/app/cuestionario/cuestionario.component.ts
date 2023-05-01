@@ -87,6 +87,7 @@ export class CuestionarioComponent implements OnInit {
     //     this.detallecuestionario = detallecuestionario;
     //   }
     // );
+
     this.activatedRoute.params.subscribe(params=>{
       this.cusuario = Number(params['usuario']);
       this.ccuestionario = Number(params['cuestionario']);

@@ -2,7 +2,7 @@ import { Subcategoria } from "./subcategoria";
 
 export class Pregunta {
     cpregunta: number;
-    csubcategoria: Subcategoria;
+    subcategoria: Subcategoria;
     npregunta: string;
     siglapregunta: string;
     preguntamil: String;

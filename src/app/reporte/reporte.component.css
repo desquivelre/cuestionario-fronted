@@ -1,16 +1,6 @@
 *{
   /* border: 1px solid red; */
 }
-
-.agradecimiento {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding-left: 60px;
-  padding-right: 60px;
-}
   
 h1 {
   font-size: 3rem;
@@ -23,8 +13,14 @@ p {
   margin-bottom: 3rem;
 }
 
+.titulo{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 button {
-  background-color: firebrick;
+  background-color: mediumaquamarine;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -32,10 +28,19 @@ button {
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
 }
 
 button:hover {
-  background-color: darkred;
+  background-color: mediumseagreen;
+}
+
+.contenedorbutton{
+  display: flex;
+  justify-content: center;
+
+  margin-top: 35px;
+  margin-bottom: 40px;
 }
 
 .charts{
@@ -44,18 +49,10 @@ button:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  margin-top: 70px;
 }
 
-.vermas{
-  position: absolute;
-  font-size: 18px;
-  bottom: 35px;
-  color: gray;
-}
-
-.charts h1{
-  margin-bottom: 65px;
-}
 
 .radio-charts{
   display: flex;
@@ -145,7 +142,8 @@ button:hover {
 
 .contenedortabla h2{
   text-align: center;
-  margin-bottom: 45px;
+  margin-top: 35px;
+  margin-bottom: 40px;
 
   font-size: 25px;
 }

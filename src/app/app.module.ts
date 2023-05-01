@@ -12,13 +12,16 @@ import { LoginService } from './login/login.service';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { ReporteService } from './reporte/reporte.service';
+import { AgradecimientoComponent } from './agradecimiento/agradecimiento.component';
+import { AgradecimientoService } from './agradecimiento/agradecimiento.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'instrucciones', component: InstruccionesComponent},
   {path: 'cuestionario/:usuario/:cuestionario', component: CuestionarioComponent},
-  {path: 'reporte/:usuario/:cuestionario:', component: ReporteComponent}
+  {path: 'reporte/:usuario/:cuestionario:', component: ReporteComponent},
+  {path: 'logout', component: AgradecimientoComponent}
 ];
 
 @NgModule({
@@ -27,7 +30,8 @@ const routes: Routes = [
     CuestionarioComponent,
     LoginComponent,
     InstruccionesComponent,
-    ReporteComponent
+    ReporteComponent,
+    AgradecimientoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ const routes: Routes = [
   providers: [
     CuestionarioService,
     LoginService,
-    ReporteService
+    ReporteService,
+    AgradecimientoService
   ],
   bootstrap: [AppComponent]
 })
