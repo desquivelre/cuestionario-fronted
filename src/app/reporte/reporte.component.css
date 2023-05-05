@@ -17,6 +17,8 @@ p {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+
+  font-size: 35px;
 }
 
 button {
@@ -59,8 +61,9 @@ button:hover {
   flex-direction: row;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
-  gap: 0px;
+  /* justify-content: space-around; */
+  justify-content: center;
+  gap: 50px;
   height: auto;
 
   margin-bottom: 50px;
@@ -70,13 +73,17 @@ button:hover {
 .radio-celda{
   display: inline-block;
   position: relative;
-  width: 400px;
+  width: 600px;
+
+  border: 1px solid gray;
+  padding: 25px;
 }
 
 .radio-celda h2{
   text-align: center;
   font-size: 25px;
-  margin-bottom: 45px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .textoizq{
@@ -125,6 +132,8 @@ button:hover {
   flex-direction: column;
   align-items: center;
 
+
+  width: auto;
 }
 
 .fila{
@@ -138,12 +147,77 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 50px;
+
+  width: 100%;
+
+  /* border: 1px solid blue; */
 }
+
 
 .contenedortabla h2{
   text-align: center;
   margin-top: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 
   font-size: 25px;
+
+  width: auto;
+}
+
+.legenda{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 25px;
+  margin-top: 40px;
+
+  width: auto;
+}
+
+.item-legenda{
+  display: flex;
+  gap: 7px;
+
+  width: auto;
+
+  
+}
+
+.textocelda{
+  font-size: 15px;
+
+  
+}
+
+.ni-celda{
+  width: 25px;
+  height: 25px;
+
+  background-color: rgb(255, 99, 132);
+}
+
+.pi-celda{
+  width: 25px;
+  height: 25px;
+
+  background-color: rgb(54, 162, 235);
+}
+
+.li-celda{
+  width: 25px;
+  height: 25px;
+
+  background-color: rgb(255, 205, 86);
+}
+
+.fi-celda{
+  width: 25px;
+  height: 25px;
+
+  background-color: rgb(150, 80, 235);
+}
+
+
+.titulo-radio-charts{
+
 }

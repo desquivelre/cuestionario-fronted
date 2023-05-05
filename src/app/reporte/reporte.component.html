@@ -1,12 +1,14 @@
 <br>
 <br>
+<br>
 
 <ng-container>
 
-    <h1 class="titulo">Reportes</h1>
+    <h1 class="titulo">Diagnóstico del Estado Actual</h1>
 
     <div class="contenedortabla">
-        <h2>Nivel de madurez por subcategoría</h2>
+        <h2><i>Nivel de Madurez por Subcategoría</i></h2>
+        
         <div class="tabla">
             <div class="fila">
                 <div class="textoizq"><h3>MIL 3</h3></div>
@@ -69,21 +71,46 @@
                 <div class="celda"><h5>{{ rsmi2 }}</h5></div>
             </div>
         </div>
+        <div class="legenda">
+            <div class="item-legenda">
+                <div class="ni-celda"></div>
+                <div class="textocelda">No implementado</div>
+            </div>
+            <div class="item-legenda">
+                <div class="pi-celda"></div>
+                <div class="textocelda">Implementado parcialmente</div>
+            </div>
+            <div class="item-legenda">
+                <div class="li-celda"></div>
+                <div class="textocelda">Implementado en gran medida</div>
+            </div>
+            <div class="item-legenda">
+                <div class="fi-celda"></div>
+                <div class="textocelda">Totalmente implementado</div>
+            </div>
+        </div>
     </div>
+
+    <br>
+
     <div class="charts">
         <div class="radio-charts">
             <div class="radio-celda">
-                <h2>Reporte por Funcion</h2>
+                <h2><i>Nivel de Madurez por Función</i></h2>
                 <canvas id="Funciones"></canvas>
             </div>
             <div class="radio-celda">
-                <h2>Reporte por Subcategoria</h2>
+                <h2><i>Nivel de Madurez por Subcategoría</i></h2>
                 <canvas id="Subcategorias"></canvas>
             </div>
         </div>
     </div>  
 </ng-container>
 
+<br>
+
 <div class="contenedorbutton">
     <button (click)="analisisbrechas()">Ver análisis de brechas</button>
 </div>
+
+<br>

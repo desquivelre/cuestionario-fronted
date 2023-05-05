@@ -4,6 +4,7 @@ import {catchError, retry} from "rxjs/operators";
 
 import {HttpClient, HttpHeaders, HttpErrorResponse} from "@angular/common/http";
 import { DetalleCuestionario } from './detallecuestionario';
+import { Subcategoria } from './subcategoria';
 
 
 @Injectable({
@@ -12,6 +13,8 @@ import { DetalleCuestionario } from './detallecuestionario';
 export class ReporteService {
 
   private urlEndPointListDetalleCuestionarioAll: string = 'http://localhost:8080/api/listar-detallecuestionarios';
+
+  private urlListarSubcategorias: string = 'http://localhost:8080/api/listar-subcategorias';
   
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'});
 
@@ -39,6 +42,10 @@ export class ReporteService {
   getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number): Observable<DetalleCuestionario[]> {
     return this.http.get<DetalleCuestionario[]>(`${this.urlEndPointListDetalleCuestionarioAll}/${ccuestionario}/${cusuario}`, this.httpOptions).pipe(retry(2),catchError(this.handleError));
     // return this.http.get<DetalleCuestionario[]>("http://localhost:8080/api/listar-detallecuestionarios/1/2", this.httpOptions).pipe(retry(2),catchError(this.handleError));
+  }
+
+  getSubcategorias(): Observable<Subcategoria[]>{
+    return this.http.get<Subcategoria[]>(`${this.urlListarSubcategorias}`, this.httpOptions).pipe(retry(2),catchError(this.handleError));
   }
   // getDetalleCuestionarios2(ccuestionario:Number, cusuario:Number){
   //   const url = `http://localhost:8080/api/listar-detallecuestionarios/${ccuestionario}/${cusuario}`;

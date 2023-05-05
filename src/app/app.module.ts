@@ -14,6 +14,8 @@ import { ReporteComponent } from './reporte/reporte.component';
 import { ReporteService } from './reporte/reporte.service';
 import { AgradecimientoComponent } from './agradecimiento/agradecimiento.component';
 import { AgradecimientoService } from './agradecimiento/agradecimiento.service';
+import { AnalisisComponent } from './analisis/analisis.component';
+import { AnalisisService } from './analisis/analisis.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -21,6 +23,7 @@ const routes: Routes = [
   {path: 'instrucciones', component: InstruccionesComponent},
   {path: 'cuestionario/:usuario/:cuestionario', component: CuestionarioComponent},
   {path: 'reporte/:usuario/:cuestionario:', component: ReporteComponent},
+  {path: 'analisis/:usuario/:cuestionario:', component: AnalisisComponent},
   {path: 'logout', component: AgradecimientoComponent}
 ];
 
@@ -31,7 +34,8 @@ const routes: Routes = [
     LoginComponent,
     InstruccionesComponent,
     ReporteComponent,
-    AgradecimientoComponent
+    AgradecimientoComponent,
+    AnalisisComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ const routes: Routes = [
     CuestionarioService,
     LoginService,
     ReporteService,
-    AgradecimientoService
+    AgradecimientoService,
+    AnalisisService
   ],
   bootstrap: [AppComponent]
 })

@@ -31,6 +31,15 @@ export class ReporteComponent{
   public rsco1 : String;
   public rsmi2 : String;
 
+  public tempidam2: Number;
+  public tempprat2: Number;
+  public tempprip1: Number;
+  public tempprpt4: Number;
+  public tempdeae1: Number;
+  public tempdeae5: Number;
+  public tempdecm1: Number;
+  public temprsco1: Number;
+  public temprsmi2: Number;
 
   constructor(private reporteService: ReporteService, private activatedRoute: ActivatedRoute, private router: Router) { 
     
@@ -279,7 +288,7 @@ export class ReporteComponent{
       }
 
       if(mil3 == false && mil2 == true && mil1 == false){
-        this.prpt4 = "MIL 1";
+        this.idam2 = "MIL 1";
       }
 
       mil1 = false;
@@ -470,7 +479,7 @@ export class ReporteComponent{
       }
 
       if(mil3 == false && mil2 == true && mil1 == false){
-        this.prpt4 = "MIL 1";
+        this.prat2 = "MIL 1";
       }
 
       mil1 = false;
@@ -662,7 +671,7 @@ export class ReporteComponent{
       }
 
       if(mil3 == false && mil2 == true && mil1 == false){
-        this.prpt4 = "MIL 1";
+        this.prip1 = "MIL 1";
       }
 
       mil1 = false;
@@ -1119,7 +1128,7 @@ export class ReporteComponent{
       }
 
       if(mil3 == false && mil2 == true && mil1 == false){
-        this.prpt4 = "MIL 1";
+        this.deae5 = "MIL 1";
       }
 
       mil1 = false;
@@ -1311,7 +1320,7 @@ export class ReporteComponent{
       }
 
       if(mil3 == false && mil2 == true && mil1 == false){
-        this.prpt4 = "MIL 1";
+        this.decm1 = "MIL 1";
       }
 
       mil1 = false;
@@ -1520,6 +1529,218 @@ export class ReporteComponent{
   
       // FUNCIONES Y SUBCATEGORIAS
   
+      this.tempidam2 = 0;
+      this.tempprat2 = 0;
+      this.tempprip1 = 0;
+      this.tempprpt4 = 0;
+      this.tempdeae1 = 0;
+      this.tempdeae5 = 0;
+      this.tempdecm1 = 0;
+      this.temprsco1 = 0;
+      this.temprsmi2 = 0;
+
+      // idam2
+      if(this.idam2 == "MIL 0"){
+        this.tempidam2 = 0;
+      }
+      if(this.idam2 == "MIL 1"){
+        this.tempidam2 = 1;
+      }
+      if(this.idam2 == "MIL 2"){
+        this.tempidam2 = 2;
+      }
+      if(this.idam2 == "MIL 3"){
+        this.tempidam2 = 3;
+      }
+
+      // prat2
+      if(this.prat2 == "MIL 0"){
+        this.tempprat2 = 0;
+      }
+      if(this.prat2 == "MIL 1"){
+        this.tempprat2 = 1;
+      }
+      if(this.prat2 == "MIL 2"){
+        this.tempprat2 = 2;
+      }
+      if(this.prat2 == "MIL 3"){
+        this.tempprat2 = 3;
+      }
+
+      // prip1
+      if(this.prip1 == "MIL 0"){
+        this.tempprip1 = 0;
+      }
+      if(this.prip1 == "MIL 1"){
+        this.tempprip1 = 1;
+      }
+      if(this.prip1 == "MIL 2"){
+        this.tempprip1 = 2;
+      }
+      if(this.prip1 == "MIL 3"){
+        this.tempprip1 = 3;
+      }
+
+      // prpt4
+      if(this.prpt4 == "MIL 0"){
+        this.tempprpt4 = 0;
+      }
+      if(this.prpt4 == "MIL 1"){
+        this.tempprpt4 = 1;
+      }
+      if(this.prpt4 == "MIL 2"){
+        this.tempprpt4 = 2;
+      }
+      if(this.prpt4 == "MIL 3"){
+        this.tempprpt4 = 3;
+      }
+
+      // deae1
+      if(this.deae1 == "MIL 0"){
+        this.tempdeae1 = 0;
+      }
+      if(this.deae1 == "MIL 1"){
+        this.tempdeae1 = 1;
+      }
+      if(this.deae1 == "MIL 2"){
+        this.tempdeae1 = 2;
+      }
+      if(this.deae1 == "MIL 3"){
+        this.tempdeae1 = 3;
+      }
+
+      // deae5
+      if(this.deae5 == "MIL 0"){
+        this.tempdeae5 = 0;
+      }
+      if(this.deae5 == "MIL 1"){
+        this.tempdeae5 = 1;
+      }
+      if(this.deae5 == "MIL 2"){
+        this.tempdeae5 = 2;
+      }
+      if(this.deae5 == "MIL 3"){
+        this.tempdeae5 = 3;
+      }
+
+      // decm1
+      if(this.decm1 == "MIL 0"){
+        this.tempdecm1 = 0;
+      }
+      if(this.decm1 == "MIL 1"){
+        this.tempdecm1 = 1;
+      }
+      if(this.decm1 == "MIL 2"){
+        this.tempdecm1 = 2;
+      }
+      if(this.decm1 == "MIL 3"){
+        this.tempdecm1 = 3;
+      }
+
+      // rsco1
+      if(this.rsco1 == "MIL 0"){
+        this.temprsco1 = 0;
+      }
+      if(this.rsco1 == "MIL 1"){
+        this.temprsco1 = 1;
+      }
+      if(this.rsco1 == "MIL 2"){
+        this.temprsco1 = 2;
+      }
+      if(this.rsco1 == "MIL 3"){
+        this.temprsco1 = 3;
+      }
+
+      // rsmi2
+      if(this.rsmi2 == "MIL 0"){
+        this.temprsmi2 = 0;
+      }
+      if(this.rsmi2 == "MIL 1"){
+        this.temprsmi2 = 1;
+      }
+      if(this.rsmi2 == "MIL 2"){
+        this.temprsmi2 = 2;
+      }
+      if(this.rsmi2 == "MIL 3"){
+        this.temprsmi2 = 3;
+      }
+
+
+      let identificar = 0;
+      let proteger = 0;
+      let detectar = 0;
+      let responder = 0;
+
+      // IDENTIFICAR
+
+      if(this.tempidam2 == 0){
+        identificar = 0;
+      }
+      if(this.tempidam2 == 1){
+        identificar = 1;
+      }
+      if(this.tempidam2 == 2){
+        identificar = 2;
+      }
+      if(this.tempidam2 == 3){
+        identificar = 3;
+      }
+
+      // PROTEGER
+
+      if(this.tempprat2 == 3 || this.tempprip1 == 3 || this.tempprpt4 == 3){
+        proteger = 3;
+      }
+
+      if(this.tempprat2 == 2 || this.tempprip1 == 2 || this.tempprpt4 == 2){
+        proteger = 2;
+      }
+
+      if(this.tempprat2 == 1 || this.tempprip1 == 1 || this.tempprpt4 == 1){
+        proteger = 1;
+      }
+
+      if(this.tempprat2 == 0 || this.tempprip1 == 0 || this.tempprpt4 == 0){
+        proteger = 0;
+      }
+
+      // DETECTAR
+
+      if(this.tempdeae1 == 3 || this.tempdeae5 == 3 || this.tempdecm1 == 3){
+        detectar = 3;
+      }
+
+      if(this.tempdeae1 == 2 || this.tempdeae5 == 2 || this.tempdecm1 == 2){
+        detectar = 2;
+      }
+
+      if(this.tempdeae1 == 1 || this.tempdeae5 == 1 || this.tempdecm1 == 1){
+        detectar = 1;
+      }
+
+      if(this.tempdeae1 == 0 || this.tempdeae5 == 0 || this.tempdecm1 == 0){
+        detectar = 0;
+      }
+
+      // RESPONDER
+
+      if(this.temprsco1 == 3 || this.temprsmi2 == 3){
+        responder = 3;
+      }
+
+      if(this.temprsco1 == 2 || this.temprsmi2 == 2){
+        responder = 2;
+      }
+
+      if(this.temprsco1 == 1 || this.temprsmi2 == 1){
+        responder = 1;
+      }
+
+      if(this.temprsco1 == 0 || this.temprsmi2 == 0){
+        responder = 0;
+      }
+
+
       let Funciones = new Chart(
         "Funciones",
         {
@@ -1529,7 +1750,7 @@ export class ReporteComponent{
             datasets: [
               {
                 label: 'Funciones',
-                data: [3, 2, 3, 1],
+                data: [identificar, proteger, detectar, responder],
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -1541,11 +1762,25 @@ export class ReporteComponent{
             ]
           },
           options:{
-            responsive: true
-          }
+            responsive: true,
+            plugins:{
+              legend:{
+                display:false
+              }
+            },
+            scales:{
+              r:{
+                min:0,
+                max:3,
+                ticks:{
+                  stepSize:1
+                }
+              }
+            }
+          },
         }
       );
-    
+
       const Subcategorias = new Chart(
         "Subcategorias",
         {
@@ -1555,7 +1790,7 @@ export class ReporteComponent{
             datasets: [
               {
                 label: 'Subcategorias',
-                data: [3, 2, 2, 2, 2, 3, 2, 2, 1],
+                data: [this.tempidam2, this.tempprat2, this.tempprip1, this.tempprpt4, this.tempdeae1, this.tempdeae5, this.tempdecm1, this.temprsco1, this.temprsmi2],
                 fill: true,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgb(54, 162, 235)',
@@ -1567,7 +1802,21 @@ export class ReporteComponent{
             ]
           },
           options:{
-            responsive: true
+            responsive: true,
+            plugins:{
+              legend:{
+                display:false
+              }
+            },
+            scales:{
+              r:{
+                min:0,
+                max:3,
+                ticks:{
+                  stepSize:1
+                }
+              }
+            }
           }
         }
       );
@@ -1576,7 +1825,7 @@ export class ReporteComponent{
   }
 
   analisisbrechas(){
-    this.router.navigateByUrl(`/logout`);
+    this.router.navigate([`/analisis/${this.cusuario}/${this.ccuestionario}`],{queryParams:{ idam2:this.tempidam2, prat2:this.tempprat2, prip1:this.tempprip1, prpt4:this.tempprpt4, deae1:this.tempdeae1, deae5:this.tempdeae5, decm1:this.tempdecm1, rsco1:this.temprsco1, rsmi2:this.temprsmi2}});
   }
 
 }

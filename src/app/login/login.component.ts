@@ -23,7 +23,7 @@ export class LoginComponent {
 
     for(var usuario of this.usuarios){
       if (this.username === usuario.nusuario && this.password === usuario.contrasena) {
-        this.router.navigate(['/instrucciones'], { queryParams: { codigousuario: usuario.cusuario } });
+        this.router.navigate(['/instrucciones'], { queryParams: { codigousuario: usuario.cusuario }   });
       } else {
         this.errorMessage = 'Usuario o contraseña incorrectos';
       }
