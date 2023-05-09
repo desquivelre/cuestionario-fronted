@@ -32,8 +32,8 @@ export class CuestionarioService {
     return this.http.get<Pregunta[]>(this.urlEndPointListPreguntas);
   }
 
-  updateDetalleCuestionario(detalleCuestionarioActualizado: DetalleCuestionario, respuestaSeleccionada: Number):Observable<DetalleCuestionario>{
-    return this.http.put<DetalleCuestionario>(`${this.urlEndPointUpdateDetalleCuestionario}/${detalleCuestionarioActualizado.id}/${respuestaSeleccionada}`, detalleCuestionarioActualizado, {headers: this.httpHeaders});
+  updateDetalleCuestionario(id: Number, respuestaSeleccionada: Number):Observable<DetalleCuestionario>{
+    return this.http.put<DetalleCuestionario>(`${this.urlEndPointUpdateDetalleCuestionario}/${id}/${respuestaSeleccionada}`, {headers: this.httpHeaders});
   }
 
   createDetalleCuestionario(usuarioSeleccionado: Number, cuestionarioSeleccionado: Number, preguntaSeleccionada, respuestaSeleccionada: Number):Observable<DetalleCuestionario>{
