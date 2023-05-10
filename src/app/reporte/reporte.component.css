@@ -63,7 +63,7 @@ button:hover {
   width: 100%;
   /* justify-content: space-around; */
   justify-content: center;
-  gap: 50px;
+  gap: 150px;
   height: auto;
 
   margin-bottom: 50px;
@@ -148,9 +148,61 @@ button:hover {
   justify-content: center;
   margin-bottom: 50px;
 
-  width: 100%;
+  padding-left: 250px;
+  padding-right: 250px;
+}
 
-  /* border: 1px solid blue; */
+@media only screen and (min-width: 1470px) {
+  .contenedortabla {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .contenedortabla {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .contenedortabla {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .contenedortabla {
+    padding-left: 220px;
+    padding-right: 220px;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .contenedortabla {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+@media only screen and (min-width: 2100px) {
+  .contenedortabla {
+    padding-left: 280px;
+    padding-right: 280px;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  .contenedortabla {
+    padding-left: 500px;
+    padding-right: 500px;
+  }
+}
+
+.margentabla{
+  border: 1px solid gray;
 }
 
 
@@ -200,21 +252,21 @@ button:hover {
   width: 25px;
   height: 25px;
 
-  background-color: rgb(54, 162, 235);
+  background-color: rgb(245, 149, 66);
 }
 
 .li-celda{
   width: 25px;
   height: 25px;
 
-  background-color: rgb(255, 205, 86);
+  background-color: rgb(245, 227, 66);
 }
 
 .fi-celda{
   width: 25px;
   height: 25px;
 
-  background-color: rgb(150, 80, 235);
+  background-color: rgb(53, 204, 78);
 }
 
 

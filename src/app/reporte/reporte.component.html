@@ -7,88 +7,91 @@
     <h1 class="titulo">Diagnóstico del Estado Actual</h1>
 
     <div class="contenedortabla">
-        <h2><i>Nivel de Madurez por Subcategoría</i></h2>
+        <div class="margentabla">
+            <h2><i>Nivel de Madurez por Subcategoría</i></h2>
+            
+            <div class="tabla">
+                <div class="fila">
+                    <div class="textoizq"><h3>MIL 3</h3></div>
+                    <div class="celda"><canvas id="chart11"></canvas></div>
+                    <div class="celda"><canvas id="chart12"></canvas></div>
+                    <div class="celda"><canvas id="chart13"></canvas></div>
+                    <div class="celda"><canvas id="chart14"></canvas></div>
+                    <div class="celda"></div>
+                    <div class="celda"><canvas id="chart16"></canvas></div>
+                    <div class="celda"><canvas id="chart17"></canvas></div>
+                    <div class="celda"></div>
+                    <div class="celda"></div>
+                </div>
+                <div class="fila">
+                    <div class="textoizq"><h3>MIL 2</h3></div>
+                    <div class="celda"><canvas id="chart21"></canvas></div>
+                    <div class="celda"><canvas id="chart22"></canvas></div>
+                    <div class="celda"><canvas id="chart23"></canvas></div>
+                    <div class="celda"><canvas id="chart24"></canvas></div>
+                    <div class="celda"></div>
+                    <div class="celda"><canvas id="chart26"></canvas></div>
+                    <div class="celda"><canvas id="chart27"></canvas></div>
+                    <div class="celda"><canvas id="chart28"></canvas></div>
+                    <div class="celda"></div>
+                </div>
+                <div class="fila">
+                    <div class="textoizq"><h3>MIL 1</h3></div>
+                    <div class="celda"><canvas id="chart31"></canvas></div>
+                    <div class="celda"><canvas id="chart32"></canvas></div>
+                    <div class="celda"><canvas id="chart33"></canvas></div>
+                    <div class="celda"><canvas id="chart34"></canvas></div>
+                    <div class="celda"><canvas id="chart35"></canvas></div>
+                    <div class="celda"><canvas id="chart36"></canvas></div>
+                    <div class="celda"><canvas id="chart37"></canvas></div>
+                    <div class="celda"><canvas id="chart38"></canvas></div>
+                    <div class="celda"><canvas id="chart39"></canvas></div>
+                </div>
+                <div class="fila">
+                    <div class="textoizq"></div>
+                    <div class="celda"><h5>ID.AM-2</h5></div>
+                    <div class="celda"><h5>PR.AT-2</h5></div>
+                    <div class="celda"><h5>PR.IP-1</h5></div>
+                    <div class="celda"><h5>PR.PT-4</h5></div>
+                    <div class="celda"><h5>DE.AE-1</h5></div>
+                    <div class="celda"><h5>DE.AE-5</h5></div>
+                    <div class="celda"><h5>DE.CM-1</h5></div>
+                    <div class="celda"><h5>RS.CO-1</h5></div>
+                    <div class="celda"><h5>RS.MI-2</h5></div>
+                </div>
+                <div class="fila">
+                    <div class="textoizq"><h5>MIL logrado</h5></div>
+                    <div class="celda"><h5>{{ idam2 }}</h5></div>
+                    <div class="celda"><h5>{{ prat2 }}</h5></div>
+                    <div class="celda"><h5>{{ prip1 }}</h5></div>
+                    <div class="celda"><h5>{{ prpt4 }}</h5></div>
+                    <div class="celda"><h5>{{ deae1 }}</h5></div>
+                    <div class="celda"><h5>{{ deae5 }}</h5></div>
+                    <div class="celda"><h5>{{ decm1 }}</h5></div>
+                    <div class="celda"><h5>{{ rsco1 }}</h5></div>
+                    <div class="celda"><h5>{{ rsmi2 }}</h5></div>
+                </div>
+            </div>
+            <div class="legenda">
+                <div class="item-legenda">
+                    <div class="ni-celda"></div>
+                    <div class="textocelda">No implementado</div>
+                </div>
+                <div class="item-legenda">
+                    <div class="pi-celda"></div>
+                    <div class="textocelda">Implementado parcialmente</div>
+                </div>
+                <div class="item-legenda">
+                    <div class="li-celda"></div>
+                    <div class="textocelda">Implementado en gran medida</div>
+                </div>
+                <div class="item-legenda">
+                    <div class="fi-celda"></div>
+                    <div class="textocelda">Totalmente implementado</div>
+                </div>
+            </div>
+        </div>
         
-        <div class="tabla">
-            <div class="fila">
-                <div class="textoizq"><h3>MIL 3</h3></div>
-                <div class="celda"><canvas id="chart11"></canvas></div>
-                <div class="celda"><canvas id="chart12"></canvas></div>
-                <div class="celda"><canvas id="chart13"></canvas></div>
-                <div class="celda"><canvas id="chart14"></canvas></div>
-                <div class="celda"></div>
-                <div class="celda"><canvas id="chart16"></canvas></div>
-                <div class="celda"><canvas id="chart17"></canvas></div>
-                <div class="celda"></div>
-                <div class="celda"></div>
-            </div>
-            <div class="fila">
-                <div class="textoizq"><h3>MIL 2</h3></div>
-                <div class="celda"><canvas id="chart21"></canvas></div>
-                <div class="celda"><canvas id="chart22"></canvas></div>
-                <div class="celda"><canvas id="chart23"></canvas></div>
-                <div class="celda"><canvas id="chart24"></canvas></div>
-                <div class="celda"></div>
-                <div class="celda"><canvas id="chart26"></canvas></div>
-                <div class="celda"><canvas id="chart27"></canvas></div>
-                <div class="celda"><canvas id="chart28"></canvas></div>
-                <div class="celda"></div>
-            </div>
-            <div class="fila">
-                <div class="textoizq"><h3>MIL 1</h3></div>
-                <div class="celda"><canvas id="chart31"></canvas></div>
-                <div class="celda"><canvas id="chart32"></canvas></div>
-                <div class="celda"><canvas id="chart33"></canvas></div>
-                <div class="celda"><canvas id="chart34"></canvas></div>
-                <div class="celda"><canvas id="chart35"></canvas></div>
-                <div class="celda"><canvas id="chart36"></canvas></div>
-                <div class="celda"><canvas id="chart37"></canvas></div>
-                <div class="celda"><canvas id="chart38"></canvas></div>
-                <div class="celda"><canvas id="chart39"></canvas></div>
-            </div>
-            <div class="fila">
-                <div class="textoizq"></div>
-                <div class="celda"><h5>ID.AM-2</h5></div>
-                <div class="celda"><h5>PR.AT-2</h5></div>
-                <div class="celda"><h5>PR.IP-1</h5></div>
-                <div class="celda"><h5>PR.PT-4</h5></div>
-                <div class="celda"><h5>DE.AE-1</h5></div>
-                <div class="celda"><h5>DE.AE-5</h5></div>
-                <div class="celda"><h5>DE.CM-1</h5></div>
-                <div class="celda"><h5>RS.CO-1</h5></div>
-                <div class="celda"><h5>RS.MI-2</h5></div>
-            </div>
-            <div class="fila">
-                <div class="textoizq"><h5>MIL logrado</h5></div>
-                <div class="celda"><h5>{{ idam2 }}</h5></div>
-                <div class="celda"><h5>{{ prat2 }}</h5></div>
-                <div class="celda"><h5>{{ prip1 }}</h5></div>
-                <div class="celda"><h5>{{ prpt4 }}</h5></div>
-                <div class="celda"><h5>{{ deae1 }}</h5></div>
-                <div class="celda"><h5>{{ deae5 }}</h5></div>
-                <div class="celda"><h5>{{ decm1 }}</h5></div>
-                <div class="celda"><h5>{{ rsco1 }}</h5></div>
-                <div class="celda"><h5>{{ rsmi2 }}</h5></div>
-            </div>
-        </div>
-        <div class="legenda">
-            <div class="item-legenda">
-                <div class="ni-celda"></div>
-                <div class="textocelda">No implementado</div>
-            </div>
-            <div class="item-legenda">
-                <div class="pi-celda"></div>
-                <div class="textocelda">Implementado parcialmente</div>
-            </div>
-            <div class="item-legenda">
-                <div class="li-celda"></div>
-                <div class="textocelda">Implementado en gran medida</div>
-            </div>
-            <div class="item-legenda">
-                <div class="fi-celda"></div>
-                <div class="textocelda">Totalmente implementado</div>
-            </div>
-        </div>
     </div>
 
     <br>

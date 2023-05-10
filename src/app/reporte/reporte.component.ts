@@ -20,6 +20,10 @@ export class ReporteComponent{
 
   public showreporte: Boolean;
 
+  public nicolor: any;
+  public picolor: any;
+  public licolor: any;
+  public ficolor: any;
 
   public idam2 : String;
   public prat2 : String;
@@ -49,15 +53,17 @@ export class ReporteComponent{
 
     this.showreporte = false;
 
+    this.nicolor = 'rgb(255, 99, 132)';
+    this.picolor = 'rgb(245, 149, 66)';
+    this.licolor = 'rgb(245, 227, 66)';
+    this.ficolor = 'rgb(53, 204, 78)';
+
     this.activatedRoute.params.subscribe(params=>{
       this.cusuario = Number(params['usuario']);
       this.ccuestionario = Number(params['cuestionario']);
     });
 
     this.ccuestionario = 1;
-
-    console.log(this.cusuario);
-    console.log(this.ccuestionario);
 
     console.log(this.showreporte);
 
@@ -77,8 +83,6 @@ export class ReporteComponent{
         alert("Lista detallecuestionario no identificado")
        }
     );
-
-    console.log(this.detallecuestionarios);
 
   }
 
@@ -147,10 +151,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -202,10 +206,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -257,10 +261,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -338,10 +342,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -393,10 +397,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -448,10 +452,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -530,10 +534,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -585,10 +589,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -640,10 +644,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -721,10 +725,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -776,10 +780,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -831,10 +835,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -917,10 +921,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -987,10 +991,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1042,10 +1046,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1097,10 +1101,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1179,10 +1183,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1234,10 +1238,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1289,10 +1293,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1371,10 +1375,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1426,10 +1430,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]
@@ -1500,10 +1504,10 @@ export class ReporteComponent{
             datasets: [{
               data: this.arrnumber,
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(150, 80, 235)'
+                this.nicolor,
+                this.picolor,
+                this.licolor,
+                this.ficolor
               ],
               hoverOffset: 4
             }]

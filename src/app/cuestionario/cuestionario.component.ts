@@ -23,28 +23,60 @@ export class CuestionarioComponent implements OnInit {
   public preguntas: Pregunta[];
   public pregunta: Pregunta;
 
+  // GUARDAR RESPUESTA 
+
+  public preguntaActual = 0;
+  public respuestaSeleccionada: string;
+  
+  public cusuario: Number;
+  public ccuestionario: Number;
+  public cpregunta: Number;
+  
+  public form: FormGroup;
+  
+  // UPDATE RESPUESTA
+  public detallecuestionarios2: DetalleCuestionario2[];
+  public detallecuestionario2: DetalleCuestionario2;
+  
   constructor(private cuestionarioService: CuestionarioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router, private reporteService: ReporteService) { 
     this.form = this.fb.group({
       checkArray: this.fb.array([]),
     })
   }
 
-  // GUARDAR RESPUESTA 
+  ngOnInit(): void {
+    this.cuestionarioService.getPreguntas().subscribe(
+      (preguntas) => {
+        this.preguntas = preguntas;
+      }
+    );
 
-  public preguntaActual = 0;
-  public respuestaSeleccionada: string;
+    setTimeout(()=>{
 
-  public cusuario: Number;
-  public ccuestionario: Number;
-  public cpregunta: Number;
+      this.activatedRoute.params.subscribe(params=>{
+        this.cusuario = Number(params['usuario']);
+        this.ccuestionario = Number(params['cuestionario']);
+      })
 
-  public form: FormGroup;
+      console.log(this.ccuestionario);
+      console.log(this.cusuario);
+      this.cargarDetalleCuestionariosBD();
 
+    }, 500);
+    
+  }
 
-  // UPDATE RESPUESTA
-  public detallecuestionarios2: DetalleCuestionario2[];
-  public detallecuestionario2: DetalleCuestionario2;
+  cargarDetalleCuestionariosBD(){
 
+    this.cuestionarioService.getDetalleCuestionarios2(this.ccuestionario, this.cusuario).subscribe(
+      (response) => {
+        this.detallecuestionarios2 = response;
+        console.log(response);
+      },err=>{
+        // alert("Lista detallecuestionario no identificado")
+       }
+    );
+  }
 
   onChange(check:string){
     this.respuestaSeleccionada = check;
@@ -86,8 +118,9 @@ export class CuestionarioComponent implements OnInit {
 
 
   public siguientePregunta(i:number){
+        
     this.preguntaActual++;
-    console.log(this.preguntas[i])
+    console.log(this.preguntas[i]);
 
     this.activatedRoute.params.subscribe(params=>{
       this.cusuario = Number(params['usuario']);
@@ -99,20 +132,25 @@ export class CuestionarioComponent implements OnInit {
     let crearvalid = false;
 
     for(let detalle of this.detallecuestionarios2){
-      if(this.cusuario == detalle.cusuario && this.ccuestionario == detalle.ccuestionario && this.preguntas[i].cpregunta == detalle.pregunta.cpregunta){
+      if(this.cusuario == detalle.usuario.cusuario && this.ccuestionario == detalle.cuestionario.ccuestionario && this.preguntas[i].cpregunta == detalle.pregunta.cpregunta){
 
         this.cuestionarioService.updateDetalleCuestionario(detalle.id, Number(this.respuestaSeleccionada)).subscribe(
-          (detallecuestionario) => {
-            this.detallecuestionario = detallecuestionario;
+          (response) => {
+            detalle = response;
           }
         );
 
         crearvalid = true;
 
+        console.log(crearvalid);
+
       }
     }
 
-    if(crearvalid = false){
+    if(crearvalid == false){
+
+      console.log(crearvalid);
+
       this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
         (detallecuestionariotemp) => {
           this.detallecuestionariotemp = detallecuestionariotemp;
@@ -127,7 +165,6 @@ export class CuestionarioComponent implements OnInit {
     this.preguntaActual++;
     console.log(this.preguntas[i])
 
-
     this.activatedRoute.params.subscribe(params=>{
       this.cusuario = Number(params['usuario']);
       this.ccuestionario = Number(params['cuestionario']);
@@ -135,11 +172,29 @@ export class CuestionarioComponent implements OnInit {
 
     let cpregunta = this.preguntas[i].cpregunta;
 
-    this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
-      (detallecuestionariotemp) => {
-        this.detallecuestionariotemp = detallecuestionariotemp;
+    let crearvalid = false;
+
+    for(let detalle of this.detallecuestionarios2){
+      if(this.cusuario == detalle.usuario.cusuario && this.ccuestionario == detalle.cuestionario.ccuestionario && this.preguntas[i].cpregunta == detalle.pregunta.cpregunta){
+
+        this.cuestionarioService.updateDetalleCuestionario(detalle.id, Number(this.respuestaSeleccionada)).subscribe(
+          (response) => {
+            detalle = response;
+          }
+        );
+
+        crearvalid = true;
+
       }
-    );
+    }
+
+    if(crearvalid == false){
+      this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
+        (detallecuestionariotemp) => {
+          this.detallecuestionariotemp = detallecuestionariotemp;
+        }
+      );
+    }
 
     this.respuestaSeleccionada = '1';
 
@@ -149,34 +204,5 @@ export class CuestionarioComponent implements OnInit {
 
 
   // FIN GUARDAR RESPUESTA
-
-  ngOnInit(): void {
-    this.cuestionarioService.getPreguntas().subscribe(
-      (preguntas) => {
-        this.preguntas = preguntas;
-      }
-    );
-
-    this.reporteService.getDetalleCuestionarios2(this.ccuestionario, this.cusuario).subscribe(
-      (response) => {
-        this.detallecuestionarios2 = response;
-      },err=>{
-        alert("Lista detallecuestionario no identificado")
-       }
-    );
-
-    // this.cuestionarioService.getDetalleCuestionarios().subscribe(
-    //   (detallecuestionarios) => {
-    //     this.detallecuestionarios = detallecuestionarios;
-    //   }
-    // );
-
-    // this.cuestionarioService.getDetalleCuestionario().subscribe(
-    //   (detallecuestionario) => {
-    //     this.detallecuestionario = detallecuestionario;
-    //   }
-    // );
-
-  }
 
 }
