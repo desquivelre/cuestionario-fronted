@@ -24,8 +24,6 @@ export class InstruccionesComponent {
     this.activatedRoute.queryParams.subscribe(params => {
       this.codigousuario = params['codigousuario'];
     });
-
-    console.log(this.codigousuario);
   }
 
 }

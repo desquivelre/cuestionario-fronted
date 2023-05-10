@@ -70,42 +70,36 @@ export class AnalisisComponent {
 
   public selectedRow: number;
 
-  constructor(private reporteService: ReporteService, private activatedRoute: ActivatedRoute, private router: Router){
-  }
+  public mostrarDiv: boolean;
 
-  cargardetallecuestionario(){
-    this.activatedRoute.params.subscribe(params=>{
-      this.cusuario = Number(params['usuario']);
-      this.ccuestionario = Number(params['cuestionario']);
-    });
-
-    this.activatedRoute.queryParams.subscribe(params=>{
-      this.idam2 = params['idam2'];
-      this.prat2 = params['prat2'];
-      this.prip1 = params['prip1'];
-      this.prpt4 = params['prpt4'];
-      this.deae1 = params['deae1'];
-      this.deae5 = params['deae5'];
-      this.decm1 = params['decm1'];
-      this.rsco1 = params['rsco1'];
-      this.rsmi2 = params['rsmi2'];
-    });
-
-    this.ccuestionario = 1;
-
-    this.reporteService.getSubcategorias().subscribe(
-      (response) => {
-        this.subcategorias = response;
-        
-      },err=>{
-        alert("Lista detallecuestionario no identificado")
-       }
-    );
-  }
+  constructor(private reporteService: ReporteService, private activatedRoute: ActivatedRoute, private router: Router){ }
 
   ngOnInit():void{
 
-    this.cargardetallecuestionario();
+    setTimeout(()=>{
+
+      this.mostrarDiv = false;
+
+      this.activatedRoute.params.subscribe(params=>{
+        this.cusuario = Number(params['usuario']);
+        this.ccuestionario = Number(params['cuestionario']);
+      });
+
+      this.activatedRoute.queryParams.subscribe(params=>{
+        this.idam2 = params['idam2'];
+        this.prat2 = params['prat2'];
+        this.prip1 = params['prip1'];
+        this.prpt4 = params['prpt4'];
+        this.deae1 = params['deae1'];
+        this.deae5 = params['deae5'];
+        this.decm1 = params['decm1'];
+        this.rsco1 = params['rsco1'];
+        this.rsmi2 = params['rsmi2'];
+      });
+
+      this.cargardetallecuestionario();
+      
+    },500);
 
     this.bestidam2 = 1;
     this.bestprat2 = 1;
@@ -116,13 +110,23 @@ export class AnalisisComponent {
     this.bestdecm1 = 1;
     this.bestrsco1 = 1;
     this.bestrsmi2 = 1;
+  }
+
+  cargardetallecuestionario(){
+
+    this.ccuestionario = 1;
+
+    this.reporteService.getSubcategorias().subscribe(
+      (response) => {
+        this.subcategorias = response;
+      },err=>{
+        alert("Lista detallecuestionario no identificado")
+       }
+    );
 
     setTimeout(()=>{
-      console.log(this.cusuario);
-      console.log(this.ccuestionario);
-
-      console.log(this.subcategorias);  
-    },500);
+      this.mostrarDiv = true;
+    },2000);
   }
 
   saveChanges() {
@@ -159,6 +163,4 @@ export class AnalisisComponent {
   agradecimiento(){
     this.router.navigate([`/logout`]);
   }
-
-
 }

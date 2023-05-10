@@ -24,7 +24,6 @@ export class CuestionarioComponent implements OnInit {
   public pregunta: Pregunta;
 
   // GUARDAR RESPUESTA 
-
   public preguntaActual = 0;
   public respuestaSeleccionada: string;
   
@@ -52,18 +51,14 @@ export class CuestionarioComponent implements OnInit {
     );
 
     setTimeout(()=>{
-
       this.activatedRoute.params.subscribe(params=>{
         this.cusuario = Number(params['usuario']);
         this.ccuestionario = Number(params['cuestionario']);
       })
 
-      console.log(this.ccuestionario);
-      console.log(this.cusuario);
       this.cargarDetalleCuestionariosBD();
 
     }, 500);
-    
   }
 
   cargarDetalleCuestionariosBD(){
@@ -79,6 +74,7 @@ export class CuestionarioComponent implements OnInit {
   }
 
   onChange(check:string){
+
     this.respuestaSeleccionada = check;
 
     const checkboxes = document.getElementsByName('check');
@@ -89,14 +85,11 @@ export class CuestionarioComponent implements OnInit {
         checkbox.checked = false;
       }
     }
-
   }
 
   onCheckboxChange(e:any){
 
     const checkArray: FormArray = this.form.get('checkArray') as FormArray;
-
-    console.log(checkArray);
 
     if(e.target.checked){
       checkArray.push(new FormControl(e.target.value));
@@ -112,23 +105,15 @@ export class CuestionarioComponent implements OnInit {
 
         i++;
       });
-      
     }
   }
-
 
   public siguientePregunta(i:number){
         
     this.preguntaActual++;
     console.log(this.preguntas[i]);
 
-    this.activatedRoute.params.subscribe(params=>{
-      this.cusuario = Number(params['usuario']);
-      this.ccuestionario = Number(params['cuestionario']);
-    })
-
     let cpregunta = this.preguntas[i].cpregunta;
-
     let crearvalid = false;
 
     for(let detalle of this.detallecuestionarios2){
@@ -143,7 +128,46 @@ export class CuestionarioComponent implements OnInit {
         crearvalid = true;
 
         console.log(crearvalid);
+      }
+    }
 
+    if(crearvalid == false){
+
+      console.log(crearvalid);
+
+      if(this.respuestaSeleccionada == null){
+        this.respuestaSeleccionada = '1';
+      }
+
+      this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
+        (detallecuestionariotemp) => {
+          this.detallecuestionariotemp = detallecuestionariotemp;
+        }
+      );
+    }
+
+    this.respuestaSeleccionada = '1';
+  }
+
+  public siguientePregunta2(i:number){
+    this.preguntaActual++;
+    console.log(this.preguntas[i]);
+
+    let cpregunta = this.preguntas[i].cpregunta;
+    let crearvalid = false;
+
+    for(let detalle of this.detallecuestionarios2){
+      if(this.cusuario == detalle.usuario.cusuario && this.ccuestionario == detalle.cuestionario.ccuestionario && this.preguntas[i].cpregunta == detalle.pregunta.cpregunta){
+
+        this.cuestionarioService.updateDetalleCuestionario(detalle.id, Number(this.respuestaSeleccionada)).subscribe(
+          (response) => {
+            detalle = response;
+          }
+        );
+
+        crearvalid = true;
+
+        console.log(crearvalid);
       }
     }
 
@@ -159,50 +183,9 @@ export class CuestionarioComponent implements OnInit {
     }
 
     this.respuestaSeleccionada = '1';
-  }
-
-  public siguientePregunta2(i:number){
-    this.preguntaActual++;
-    console.log(this.preguntas[i])
-
-    this.activatedRoute.params.subscribe(params=>{
-      this.cusuario = Number(params['usuario']);
-      this.ccuestionario = Number(params['cuestionario']);
-    })
-
-    let cpregunta = this.preguntas[i].cpregunta;
-
-    let crearvalid = false;
-
-    for(let detalle of this.detallecuestionarios2){
-      if(this.cusuario == detalle.usuario.cusuario && this.ccuestionario == detalle.cuestionario.ccuestionario && this.preguntas[i].cpregunta == detalle.pregunta.cpregunta){
-
-        this.cuestionarioService.updateDetalleCuestionario(detalle.id, Number(this.respuestaSeleccionada)).subscribe(
-          (response) => {
-            detalle = response;
-          }
-        );
-
-        crearvalid = true;
-
-      }
-    }
-
-    if(crearvalid == false){
-      this.cuestionarioService.createDetalleCuestionario(this.cusuario, this.ccuestionario, cpregunta, Number(this.respuestaSeleccionada)).subscribe(
-        (detallecuestionariotemp) => {
-          this.detallecuestionariotemp = detallecuestionariotemp;
-        }
-      );
-    }
-
-    this.respuestaSeleccionada = '1';
 
     this.router.navigateByUrl(`/reporte/${this.cusuario}/${this.ccuestionario}`);
-
   }
 
-
   // FIN GUARDAR RESPUESTA
-
 }

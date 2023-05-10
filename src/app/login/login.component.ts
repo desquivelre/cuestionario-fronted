@@ -16,8 +16,15 @@ export class LoginComponent {
 
   public usuarios: Usuario[];
 
-
   constructor(private loginService: LoginService , private router: Router) {}
+
+  ngOnInit(): void {
+    this.loginService.getUsuarios().subscribe(
+      (usuarios) => {
+        this.usuarios = usuarios;
+      }
+    );
+  }
 
   login() {
 
@@ -28,16 +35,6 @@ export class LoginComponent {
         this.errorMessage = 'Usuario o contraseña incorrectos';
       }
     }
-    console.log(this.usuarios);
-  }
-
-
-  ngOnInit(): void {
-    this.loginService.getUsuarios().subscribe(
-      (usuarios) => {
-        this.usuarios = usuarios;
-      }
-    );
   }
 
 }

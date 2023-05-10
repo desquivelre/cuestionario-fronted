@@ -1,4 +1,4 @@
-<div class="contenedor-main">
+<div class="contenedor-main" *ngIf = "mostrarDiv==true">
     <div class="contenedor-header">
         <div class="titulo">
             Análisis de brechas
@@ -15,10 +15,10 @@
                 <th>#</th>
                 <th>Subcategoria</th>
                 <th>Descripcion subcategoria</th>
-                <th>Priorización DDoS (1-3)</th>
+                <!-- <th>Priorización DDoS (1-3)</th> -->
                 <th>Nivel Actual (0-3)</th>
                 <th>Nivel Deseado (0-3)</th>
-                <th>Brecha identificada</th>
+                <!-- <th>Brecha identificada</th> -->
                 <th>Priorización sugerida (1-4)</th>
             </tr>
         </thead>
@@ -73,7 +73,86 @@
                 <td><input type="text" [(ngModel)]="item.pregunta.npregunta"></td>
                 <td><input type="text" [(ngModel)]="item.respuestamil.nrespuestamil"></td>
             </tr> -->
+
+
+
             <tr class="table-light">
+                <td>{{ subcategorias[1].csubcategoria }}</td>
+                <td>{{ subcategorias[1].siglasubcategoria }}</td>
+                <td>{{ subcategorias[1].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + idam2 }}</td>
+                <td><input type="text" [(ngModel)]="deseadoidam2"></td>
+                <td>{{ prioidam2 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[37].csubcategoria }}</td>
+                <td>{{ subcategorias[37].siglasubcategoria }}</td>
+                <td>{{ subcategorias[37].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + prat2 }}</td>
+                <td><input type="text" [(ngModel)]="deseadoprat2"></td>
+                <td>{{ prioprat2 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[50].csubcategoria }}</td>
+                <td>{{ subcategorias[50].siglasubcategoria }}</td>
+                <td>{{ subcategorias[50].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + prip1 }}</td>
+                <td><input type="text" [(ngModel)]="deseadoprip1"></td>
+                <td>{{ prioprip1 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[67].csubcategoria }}</td>
+                <td>{{ subcategorias[67].siglasubcategoria }}</td>
+                <td>{{ subcategorias[67].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + prpt4 }}</td>
+                <td><input type="text" [(ngModel)]="deseadoprpt4"></td>
+                <td>{{ prioprpt4 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[69].csubcategoria }}</td>
+                <td>{{ subcategorias[69].siglasubcategoria }}</td>
+                <td>{{ subcategorias[69].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + deae1}}</td>
+                <td><input type="text" [(ngModel)]="deseadodeae1"></td>
+                <td>{{ priodeae1 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[73].csubcategoria }}</td>
+                <td>{{ subcategorias[73].siglasubcategoria }}</td>
+                <td>{{ subcategorias[73].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + deae5 }}</td>
+                <td><input type="text" [(ngModel)]="deseadodeae5"></td>
+                <td>{{ priodeae5 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[74].csubcategoria }}</td>
+                <td>{{ subcategorias[74].siglasubcategoria }}</td>
+                <td>{{ subcategorias[74].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + decm1 }}</td>
+                <td><input type="text" [(ngModel)]="deseadodecm1"></td>
+                <td>{{ priodecm1 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[91].csubcategoria }}</td>
+                <td>{{ subcategorias[91].siglasubcategoria }}</td>
+                <td>{{ subcategorias[91].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + rsco1 }}</td>
+                <td><input type="text" [(ngModel)]="deseadorsco1"></td>
+                <td>{{ priorsco1 }}</td>
+            </tr>
+            <tr class="table-light">
+                <td>{{ subcategorias[89].csubcategoria }}</td>
+                <td>{{ subcategorias[89].siglasubcategoria }}</td>
+                <td>{{ subcategorias[89].nsubcategoria }}</td>
+                <td>{{ 'MIL ' + rsmi2 }}</td>
+                <td><input type="text" [(ngModel)]="deseadorsmi2"></td>
+                <td>{{ priorsmi2 }}</td>
+            </tr>
+
+
+
+
+            <!-- <tr class="table-light">
                 <td>{{ subcategorias[1].csubcategoria }}</td>
                 <td>{{ subcategorias[1].siglasubcategoria }}</td>
                 <td>{{ subcategorias[1].nsubcategoria }}</td>
@@ -162,7 +241,15 @@
                 <td><input type="text" [(ngModel)]="deseadorsmi2"></td>
                 <td>{{ brecharsmi2 }}</td>
                 <td>{{ priorsmi2 }}</td>
-            </tr>
+            </tr> -->
+
+
+
+
+
+
+
+
                  
         </tbody>
     </table>

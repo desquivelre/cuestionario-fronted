@@ -73,7 +73,4 @@ export class CuestionarioService {
     return this.http.get<DetalleCuestionario>(this.urlEndPointList);
   }
 
-
-
-
 }

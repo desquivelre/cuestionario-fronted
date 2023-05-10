@@ -9,12 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AgradecimientoComponent {
 
-  constructor(private agradecimientoService: AgradecimientoService, private activatedRoute: ActivatedRoute, private router: Router) { 
-    
-  }
+  constructor(private agradecimientoService: AgradecimientoService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   salir() {
     this.router.navigateByUrl(`/login`);
   }
-
 }

@@ -1,5 +1,5 @@
 *{
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 .contenedor-main{
@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 80px;
+    border: 1px solid blue;
 }
 
 button {
@@ -53,4 +54,34 @@ button:hover {
 
 .table{
     text-align: center;
+}
+
+table th{
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table td{
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+table td:nth-child(1) {
+    width: 50px;
+}
+table td:nth-child(2) {
+    width: 50px;
+}
+table td:nth-child(3) {
+    width: 350px;
+}
+table td:nth-child(4) {
+    width: 150px;
+}
+table td:nth-child(5) {
+    width: 150px;
+}
+table td:nth-child(5) input{
+    width: 50px;
 }

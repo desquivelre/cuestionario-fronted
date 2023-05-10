@@ -65,8 +65,6 @@ export class ReporteComponent{
 
     this.ccuestionario = 1;
 
-    console.log(this.showreporte);
-
     this.beforereporte(this.ccuestionario, this.cusuario);
    
     setTimeout(() => {
@@ -89,13 +87,6 @@ export class ReporteComponent{
   reporte(){
 
     this.showreporte = true;
-
-    console.log(this.cusuario);
-    console.log(this.ccuestionario);
-  
-    console.log(this.showreporte);
-
-    console.log(this.detallecuestionarios);
 
     let ni = 0;
     let pi = 0;
