@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DetalleCuestionario } from '../reporte/detallecuestionario';
 import { Subcategoria } from '../reporte/subcategoria';
 
+import Swal from "sweetalert2";
+
 @Component({
   selector: 'app-analisis',
   templateUrl: './analisis.component.html',
@@ -72,6 +74,8 @@ export class AnalisisComponent {
 
   public mostrarDiv: boolean;
 
+  public mostrarPrio: boolean;
+
   constructor(private reporteService: ReporteService, private activatedRoute: ActivatedRoute, private router: Router){ }
 
   ngOnInit():void{
@@ -131,32 +135,82 @@ export class AnalisisComponent {
 
   saveChanges() {
     
-    this.brechaidam2 = Number(this.deseadoidam2) - Number(this.idam2);
-    this.prioidam2 = 4 - ((1/Number(this.bestidam2)) * Number(this.brechaidam2));
+    this.mostrarPrio = false;
 
-    this.brechaprat2 = Number(this.deseadoprat2) - Number(this.prat2);
-    this.prioprat2 = 4 - ((1/Number(this.bestprat2)) * Number(this.brechaprat2));
+    if(this.deseadoidam2 < this.idam2 || Number(this.deseadoidam2) > 3 || this.deseadoidam2 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brechaprip1 = Number(this.deseadoprip1) - Number(this.prip1);
-    this.prioprip1 = 4 - ((1/Number(this.bestprip1)) * Number(this.brechaprip1));
+    if(this.deseadoprat2 < this.prat2 || Number(this.deseadoprat2) > 3 || this.deseadoprat2 == null){
+      this.mostrarPrio = true;
+    }
+    
+    if(this.deseadoprip1 < this.prip1 || Number(this.deseadoprip1) > 3 || this.deseadoprip1 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brechaprpt4 = Number(this.deseadoprpt4) - Number(this.prpt4);
-    this.prioprpt4 = 4 - ((1/Number(this.bestprpt4)) * Number(this.brechaprpt4));
+    if(this.deseadoprpt4 < this.prpt4 || Number(this.deseadoprpt4) > 3 || this.deseadoprpt4 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brechadeae1 = Number(this.deseadodeae1) - Number(this.deae1);
-    this.priodeae1 = 4 - ((1/Number(this.bestdeae1)) * Number(this.brechadeae1));
+    if(this.deseadodeae1 < this.deae1 || Number(this.deseadodeae1) > 3 || this.deseadodeae1 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brechadeae5 = Number(this.deseadodeae5) - Number(this.deae5);
-    this.priodeae5 = 4 - ((1/Number(this.bestdeae5)) * Number(this.brechadeae5));
+    if(this.deseadodeae5 < this.deae5 || Number(this.deseadodeae5) > 3 || this.deseadodeae5 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brechadecm1 = Number(this.deseadodecm1) - Number(this.decm1);
-    this.priodecm1 = 4 - ((1/Number(this.bestdecm1)) * Number(this.brechadecm1));
+    if(this.deseadodecm1 < this.decm1 || Number(this.deseadodecm1) > 3 || this.deseadodecm1 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brecharsco1 = Number(this.deseadorsco1) - Number(this.rsco1);
-    this.priorsco1 = 4 - ((1/Number(this.bestrsco1)) * Number(this.brecharsco1));
+    if(this.deseadorsco1 < this.rsco1 || Number(this.deseadorsco1) > 3 || this.deseadorsco1 == null){
+      this.mostrarPrio = true;
+    }
 
-    this.brecharsmi2 = Number(this.deseadorsmi2) - Number(this.rsmi2);
-    this.priorsmi2 = 4 - ((1/Number(this.bestrsmi2)) * Number(this.brecharsmi2));
+    if(this.deseadorsmi2 < this.rsmi2 || Number(this.deseadorsmi2) > 3 || this.deseadorsmi2 == null){
+      this.mostrarPrio = true;
+    }
+
+    if(this.mostrarPrio == true){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrar nivel deseado',
+        text: 'El nivel deseado asignado debe ser mayor o igual al nivel actual, o en su defecto no debe exceder a 3',
+      });
+    }
+
+    if(this.mostrarPrio == false){
+      this.brechaidam2 = Number(this.deseadoidam2) - Number(this.idam2);
+      this.prioidam2 = 4 - ((1/Number(this.bestidam2)) * Number(this.brechaidam2));
+
+      this.brechaprat2 = Number(this.deseadoprat2) - Number(this.prat2);
+      this.prioprat2 = 4 - ((1/Number(this.bestprat2)) * Number(this.brechaprat2));
+
+      this.brechaprip1 = Number(this.deseadoprip1) - Number(this.prip1);
+      this.prioprip1 = 4 - ((1/Number(this.bestprip1)) * Number(this.brechaprip1));
+
+      this.brechaprpt4 = Number(this.deseadoprpt4) - Number(this.prpt4);
+      this.prioprpt4 = 4 - ((1/Number(this.bestprpt4)) * Number(this.brechaprpt4));
+
+      this.brechadeae1 = Number(this.deseadodeae1) - Number(this.deae1);
+      this.priodeae1 = 4 - ((1/Number(this.bestdeae1)) * Number(this.brechadeae1));
+
+      this.brechadeae5 = Number(this.deseadodeae5) - Number(this.deae5);
+      this.priodeae5 = 4 - ((1/Number(this.bestdeae5)) * Number(this.brechadeae5));
+
+      this.brechadecm1 = Number(this.deseadodecm1) - Number(this.decm1);
+      this.priodecm1 = 4 - ((1/Number(this.bestdecm1)) * Number(this.brechadecm1));
+
+      this.brecharsco1 = Number(this.deseadorsco1) - Number(this.rsco1);
+      this.priorsco1 = 4 - ((1/Number(this.bestrsco1)) * Number(this.brecharsco1));
+
+      this.brecharsmi2 = Number(this.deseadorsmi2) - Number(this.rsmi2);
+      this.priorsmi2 = 4 - ((1/Number(this.bestrsmi2)) * Number(this.brecharsmi2));
+    }
+
+    
 
   }
 
