@@ -3,12 +3,20 @@
         <div class="titulo">
             Análisis de brechas
         </div>
-        <div>
-            <button (click)="saveChanges()" class="boton-actualizar">Actualizar</button>
+        <div class="contenedor-botones">
+            <div class="boton-pdf" *ngIf="mostrarPDF==true">
+                <a href="../../assets/sp800-53r5-control-catalog.pdf" target="_blank">
+                    <button>
+                        <i class="fa-solid fa-file-pdf fa-xl"></i>Ver Detalle de las contramedidas
+                    </button>
+                </a>
+            </div>
+            <div>
+                <button (click)="saveChanges()" class="boton-actualizar">Obtener priorización</button>
+            </div>
         </div>
     </div>
-    
-    
+
     <table class="table">
         <thead>
             <tr>
@@ -20,137 +28,91 @@
                 <th>Nivel Deseado (0-3)</th>
                 <!-- <th>Brecha identificada</th> -->
                 <th>Priorización sugerida (1-4)</th>
+                <th>Código de las Contramedidas</th>
             </tr>
         </thead>
         <tbody>
-            <!-- <tr class="table-primary">
-                <td>1</td>
-                <td>Credit Card</td>
-                <td>04/07/2021</td>
-                <td>Waiting for statement</td>
-            </tr>
-            <tr class="table-secondary">
-                <td>2</td>
-                <td>Insurance</td>
-                <td>02/07/2021</td>
-                <td>Cancelled</td>
-            </tr>
-            <tr class="table-success">
-                <td>3</td>
-                <td>Water</td>
-                <td>01/07/2021</td>
-                <td>Paid</td>
-            </tr>
-            <tr class="table-info">
-                <td>4</td>
-                <td>Internet</td>
-                <td>05/07/2021</td>
-                <td>Change plan</td>
-            </tr>
-            <tr class="table-warning">
-                <td>5</td>
-                <td>Electricity</td>
-                <td>03/07/2021</td>
-                <td>Pending</td>
-            </tr>
-            <tr class="table-danger">
-                <td>6</td>
-                <td>Telephone</td>
-                <td>06/07/2021</td>
-                <td>Due</td>
-            </tr>
-            <tr class="table-dark">
-                <td>8</td>
-                <td>Gas</td>
-                <td>06/07/2021</td>
-                <td>Payment failed</td>
-            </tr> -->
-    
-            <!-- <tr class="table-light" *ngFor="let item of detallecuestionarios; let i = index" [class.selected]="selectedRow === i">
-                <td>{{ i+1 }}</td>
-                <td>{{ item.pregunta.subcategoria.siglasubcategoria }}</td>
-                <td>{{ item.pregunta.subcategoria.nsubcategoria }}</td>
-                <td><input type="text" [(ngModel)]="item.pregunta.npregunta"></td>
-                <td><input type="text" [(ngModel)]="item.respuestamil.nrespuestamil"></td>
-            </tr> -->
-
-
-
             <tr class="table-light">
                 <td>{{ subcategorias[1].csubcategoria }}</td>
                 <td>{{ subcategorias[1].siglasubcategoria }}</td>
                 <td>{{ subcategorias[1].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + idam2 }}</td>
-                <td><input type="text" [(ngModel)]="deseadoidam2"></td>
-                <td>{{ prioidam2 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadoidam2"></td>
+                <td [ngClass]="getCellColoridam2()">{{ prioidam2 }}</td>
+                <td>{{ contraidam2 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[37].csubcategoria }}</td>
                 <td>{{ subcategorias[37].siglasubcategoria }}</td>
                 <td>{{ subcategorias[37].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + prat2 }}</td>
-                <td><input type="text" [(ngModel)]="deseadoprat2"></td>
-                <td>{{ prioprat2 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadoprat2"></td>
+                <td [ngClass]="getCellColorprat2()">{{ prioprat2 }}</td>
+                <td>{{ contraprat2 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[50].csubcategoria }}</td>
                 <td>{{ subcategorias[50].siglasubcategoria }}</td>
                 <td>{{ subcategorias[50].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + prip1 }}</td>
-                <td><input type="text" [(ngModel)]="deseadoprip1"></td>
-                <td>{{ prioprip1 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadoprip1"></td>
+                <td [ngClass]="getCellColorprip1()">{{ prioprip1 }}</td>
+                <td>{{ contraprip1 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[67].csubcategoria }}</td>
                 <td>{{ subcategorias[67].siglasubcategoria }}</td>
                 <td>{{ subcategorias[67].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + prpt4 }}</td>
-                <td><input type="text" [(ngModel)]="deseadoprpt4"></td>
-                <td>{{ prioprpt4 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadoprpt4"></td>
+                <td [ngClass]="getCellColorprpt4()">{{ prioprpt4 }}</td>
+                <td>{{ contraprpt4 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[69].csubcategoria }}</td>
                 <td>{{ subcategorias[69].siglasubcategoria }}</td>
                 <td>{{ subcategorias[69].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + deae1}}</td>
-                <td><input type="text" [(ngModel)]="deseadodeae1"></td>
-                <td>{{ priodeae1 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadodeae1"></td>
+                <td [ngClass]="getCellColordeae1()">{{ priodeae1 }}</td>
+                <td>{{ contradeae1 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[73].csubcategoria }}</td>
                 <td>{{ subcategorias[73].siglasubcategoria }}</td>
                 <td>{{ subcategorias[73].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + deae5 }}</td>
-                <td><input type="text" [(ngModel)]="deseadodeae5"></td>
-                <td>{{ priodeae5 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadodeae5"></td>
+                <td [ngClass]="getCellColordeae5()">{{ priodeae5 }}</td>
+                <td>{{ contradeae5 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[74].csubcategoria }}</td>
                 <td>{{ subcategorias[74].siglasubcategoria }}</td>
                 <td>{{ subcategorias[74].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + decm1 }}</td>
-                <td><input type="text" [(ngModel)]="deseadodecm1"></td>
-                <td>{{ priodecm1 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadodecm1"></td>
+                <td [ngClass]="getCellColordecm1()">{{ priodecm1 }}</td>
+                <td>{{ contradecm1 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[91].csubcategoria }}</td>
                 <td>{{ subcategorias[91].siglasubcategoria }}</td>
                 <td>{{ subcategorias[91].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + rsco1 }}</td>
-                <td><input type="text" [(ngModel)]="deseadorsco1"></td>
-                <td>{{ priorsco1 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadorsco1"></td>
+                <td [ngClass]="getCellColorrsco1()">{{ priorsco1 }}</td>
+                <td>{{ contrarsco1 }}</td>
             </tr>
             <tr class="table-light">
                 <td>{{ subcategorias[89].csubcategoria }}</td>
                 <td>{{ subcategorias[89].siglasubcategoria }}</td>
                 <td>{{ subcategorias[89].nsubcategoria }}</td>
                 <td>{{ 'MIL ' + rsmi2 }}</td>
-                <td><input type="text" [(ngModel)]="deseadorsmi2"></td>
-                <td>{{ priorsmi2 }}</td>
+                <td>{{ 'MIL' }}<input type="text" [(ngModel)]="deseadorsmi2"></td>
+                <td [ngClass]="getCellColorrsmi2()">{{ priorsmi2 }}</td>
+                <td>{{ contrarsmi2 }}</td>
             </tr>
-
-
-
 
             <!-- <tr class="table-light">
                 <td>{{ subcategorias[1].csubcategoria }}</td>
@@ -245,17 +207,10 @@
 
 
 
-
-
-
-
-
-                 
         </tbody>
     </table>
     
-    
-    <div class="boton-terminar">
+    <div class="boton-terminar" *ngIf="mostrarPDF==true">
         <button (click)="agradecimiento()">Terminar cuestionario</button>
     </div>
     

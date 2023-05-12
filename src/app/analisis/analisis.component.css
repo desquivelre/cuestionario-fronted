@@ -1,5 +1,7 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 *{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .contenedor-main{
@@ -8,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 80px;
-    border: 1px solid blue;
 }
 
 button {
@@ -31,7 +32,7 @@ button:hover {
 }
 
 .boton-actualizar:hover{
-    background-color: gray;
+    background-color: darkblue;
 }
 
 .contenedor-header{
@@ -80,12 +81,52 @@ table td:nth-child(4) {
     width: 150px;
 }
 table td:nth-child(5) {
-    width: 150px;
+    width: 170px;
 }
 table td:nth-child(5) input{
     width: 50px;
     text-align: center;
+    margin-left: 10px;
 }
 table td:nth-child(6) {
     width: 50px;
+}
+table td:nth-child(7) {
+    width: 200px;
+}
+
+.verde{
+    background-color: #77dd77;
+}
+
+.amarillo{
+    background-color: #fdfd96;
+}
+
+.naranja{
+    background-color: #fa996c;
+}
+
+.rojo{
+    background-color: #ff6961;
+}
+
+.boton-pdf button{
+    background-color: cadetblue;
+    color: black;
+}
+
+.boton-pdf button:hover{
+    background-color: darkcyan;
+}
+
+.boton-pdf i{
+    margin-right: 10px;
+}
+
+.contenedor-botones{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 50px;
 }

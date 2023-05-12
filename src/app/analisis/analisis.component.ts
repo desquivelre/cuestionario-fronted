@@ -76,9 +76,23 @@ export class AnalisisComponent {
 
   public mostrarPrio: boolean;
 
+  public contraidam2: string;
+  public contraprat2: string;
+  public contraprip1: string;
+  public contraprpt4: string;
+  public contradeae1: string;
+  public contradeae5: string;
+  public contradecm1: string;
+  public contrarsco1: string;
+  public contrarsmi2: string;
+
+  public mostrarPDF: boolean;
+
   constructor(private reporteService: ReporteService, private activatedRoute: ActivatedRoute, private router: Router){ }
 
   ngOnInit():void{
+
+    this.mostrarPDF = false;
 
     setTimeout(()=>{
 
@@ -208,10 +222,190 @@ export class AnalisisComponent {
 
       this.brecharsmi2 = Number(this.deseadorsmi2) - Number(this.rsmi2);
       this.priorsmi2 = 4 - ((1/Number(this.bestrsmi2)) * Number(this.brecharsmi2));
+
+      this.contraidam2 = "CM-8, PM-5";
+      this.contraprat2 = "AT-3, PM-13"; 
+      this.contraprip1 = "CM-2, CM-3, CM-4, CM-5, CM-6, CM-7, CM-9, SA-10"; 
+      this.contraprpt4 = "AC-4, AC-17, AC-18, CP-8, SC-7, SC-19, SC-20, SC-21, SC-22, SC-23, SC-24, SC-25, SC-29,  SC-32, SC-36, SC-37, SC-38, SC-39, SC-40, SC-41, SC-43"; 
+      this.contradeae1 = "AC-4, CA-3, CM-2, SI-4"; 
+      this.contradeae5 = "IR-4, IR-5, IR-8"; 
+      this.contradecm1 = "AC-2, AU-12, CA-7, CM-3, SC-5, SC-7, SI-4"; 
+      this.contrarsco1 = "CP-2, CP-3, IR-3, IR-8";
+      this.contrarsmi2 = "IR-4";
+
+      this.mostrarPDF = true;  
     }
+  }
 
-    
+  getCellColoridam2():string {
+    if(Number(this.prioidam2) == 4){
+      return 'verde';
+    }
+    if(Number(this.prioidam2) < 4 && Number(this.prioidam2) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.prioidam2) < 3 && Number(this.prioidam2) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.prioidam2) < 2 && Number(this.prioidam2) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.prioidam2) < 1 && Number(this.prioidam2) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
 
+  getCellColorprat2():string {
+    if(Number(this.prioprat2) == 4){
+      return 'verde';
+    }
+    if(Number(this.prioprat2) < 4 && Number(this.prioprat2) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.prioprat2) < 3 && Number(this.prioprat2) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.prioprat2) < 2 && Number(this.prioprat2) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.prioprat2) < 1 && Number(this.prioprat2) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColorprip1():string {
+    if(Number(this.prioprip1) == 4){
+      return 'verde';
+    }
+    if(Number(this.prioprip1) < 4 && Number(this.prioprip1) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.prioprip1) < 3 && Number(this.prioprip1) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.prioprip1) < 2 && Number(this.prioprip1) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.prioprip1) < 1 && Number(this.prioprip1) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColorprpt4():string {
+    if(Number(this.prioprpt4) == 4){
+      return 'verde';
+    }
+    if(Number(this.prioprpt4) < 4 && Number(this.prioprpt4) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.prioprpt4) < 3 && Number(this.prioprpt4) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.prioprpt4) < 2 && Number(this.prioprpt4) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.prioprpt4) < 1 && Number(this.prioprpt4) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColordeae1():string {
+    if(Number(this.priodeae1) == 4){
+      return 'verde';
+    }
+    if(Number(this.priodeae1) < 4 && Number(this.priodeae1) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.priodeae1) < 3 && Number(this.priodeae1) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.priodeae1) < 2 && Number(this.priodeae1) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.priodeae1) < 1 && Number(this.priodeae1) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+  
+  getCellColordeae5():string {
+    if(Number(this.priodeae5) == 4){
+      return 'verde';
+    }
+    if(Number(this.priodeae5) < 4 && Number(this.priodeae5) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.priodeae5) < 3 && Number(this.priodeae5) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.priodeae5) < 2 && Number(this.priodeae5) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.priodeae5) < 1 && Number(this.priodeae5) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColordecm1():string {
+    if(Number(this.priodecm1) == 4){
+      return 'verde';
+    }
+    if(Number(this.priodecm1) < 4 && Number(this.priodecm1) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.priodecm1) < 3 && Number(this.priodecm1) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.priodecm1) < 2 && Number(this.priodecm1) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.priodecm1) < 1 && Number(this.priodecm1) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColorrsco1():string {
+    if(Number(this.priorsco1) == 4){
+      return 'verde';
+    }
+    if(Number(this.priorsco1) < 4 && Number(this.priorsco1) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.priorsco1) < 3 && Number(this.priorsco1) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.priorsco1) < 2 && Number(this.priorsco1) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.priorsco1) < 1 && Number(this.priorsco1) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
+  }
+
+  getCellColorrsmi2():string {
+    if(Number(this.priorsmi2) == 4){
+      return 'verde';
+    }
+    if(Number(this.priorsmi2) < 4 && Number(this.priorsmi2) >= 3 ){
+      return 'amarillo';
+    }
+    if(Number(this.priorsmi2) < 3 && Number(this.priorsmi2) >= 2 ){
+      return 'naranja';
+    }
+    if(Number(this.priorsmi2) < 2 && Number(this.priorsmi2) >= 1 ){
+      return 'rojo';
+    }
+    if(Number(this.priorsmi2) < 1 && Number(this.priorsmi2) >= 0 ){
+      return 'rojo';
+    }
+    return 'table-light';
   }
 
   agradecimiento(){
