@@ -1,3 +1,4 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 /* Estilos para el contenedor del formulario */
 .login-container {
     display: flex;
@@ -20,6 +21,12 @@
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: 600;
+  }
+  
+  .login-form i{
+    margin-bottom: 15px;
+    margin-top: 30px;
   }
   
   .login-form label {

@@ -8,8 +8,8 @@ import { Router, ActivatedRoute} from '@angular/router';
 })
 export class InstruccionesComponent {
 
-  private codigousuario: Number;
-  private ccuestionario: Number;
+  public codigousuario: Number;
+  public ccuestionario: Number;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
