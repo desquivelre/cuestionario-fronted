@@ -19,15 +19,17 @@ export class LoginComponent {
   constructor(private loginService: LoginService , private router: Router) {}
 
   ngOnInit(): void {
-    this.loginService.getUsuarios().subscribe(
-      (usuarios) => {
-        this.usuarios = usuarios;
-      }
-    );
+
+    setTimeout(()=>{
+      this.loginService.getUsuarios().subscribe(
+        (usuarios) => {
+          this.usuarios = usuarios;
+        }
+      );
+    }, 2000);
   }
 
   login() {
-
     for(var usuario of this.usuarios){
       if (this.username === usuario.nusuario && this.password === usuario.contrasena) {
         this.router.navigate(['/instrucciones'], { queryParams: { codigousuario: usuario.cusuario }   });

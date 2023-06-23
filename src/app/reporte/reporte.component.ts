@@ -66,10 +66,10 @@ export class ReporteComponent{
     this.ccuestionario = 1;
 
     this.beforereporte(this.ccuestionario, this.cusuario);
-   
+    
     setTimeout(() => {
       this.reporte();
-    }, 500);
+    }, 2000);
     
   }
 
@@ -81,11 +81,9 @@ export class ReporteComponent{
         alert("Lista detallecuestionario no identificado")
        }
     );
-
   }
 
   reporte(){
-
     this.showreporte = true;
 
     let ni = 0;
@@ -1816,7 +1814,7 @@ export class ReporteComponent{
         }
       );
       
-    }, 500);
+    }, 3000);
   }
 
   analisisbrechas(){

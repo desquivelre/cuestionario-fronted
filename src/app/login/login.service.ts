@@ -9,7 +9,7 @@ import { Usuario } from './usuario';
 })
 export class LoginService {
 
-  private urlEndPointListAllUsuarios: string = 'http://localhost:8080/api/listar-usuarios';
+  private urlEndPointListAllUsuarios: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-usuarios';
 
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'})
 

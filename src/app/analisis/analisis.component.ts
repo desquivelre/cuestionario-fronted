@@ -117,7 +117,7 @@ export class AnalisisComponent {
 
       this.cargardetallecuestionario();
       
-    },500);
+    },1500);
 
     this.bestidam2 = 1;
     this.bestprat2 = 1;
@@ -144,7 +144,7 @@ export class AnalisisComponent {
 
     setTimeout(()=>{
       this.mostrarDiv = true;
-    },2000);
+    },500);
   }
 
   saveChanges() {

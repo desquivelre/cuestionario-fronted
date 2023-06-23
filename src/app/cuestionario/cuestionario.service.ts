@@ -11,18 +11,18 @@ import { DetalleCuestionario2 } from './detallecuestionario2';
   providedIn: 'root'
 })
 export class CuestionarioService {
+  
+  private url = 'https://springgcp-386623.rj.r.appspot.com/api/listar-detallecuestionario/1';
+  private urlEndPointList: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-detallecuestionario/2';
 
-  private url = 'http://localhost:8080/api/listar-detallecuestionario/1';
-  private urlEndPointList: string = 'http://localhost:8080/api/listar-detallecuestionario/2';
 
-
-  private urlEndPointUpdateDetalleCuestionario: string = 'http://localhost:8080/api/detallecuestionario-update';
-  private urlEndPointCreateDetalleCuestionario: string = 'http://localhost:8080/api/detallecuestionario-save';
-  private urlEndPointListAll: string = 'http://localhost:8080/api/listar-detallecuestionarios';
+  private urlEndPointUpdateDetalleCuestionario: string = 'https://springgcp-386623.rj.r.appspot.com/api/detallecuestionario-update';
+  private urlEndPointCreateDetalleCuestionario: string = 'https://springgcp-386623.rj.r.appspot.com/api/detallecuestionario-save';
+  private urlEndPointListAll: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-detallecuestionarios';
   
 
-  private urlEndPointListPreguntas: string = 'http://localhost:8080/api/listar-preguntas';
-  private urlEndPointListDetalleCuestionarioAll: string = 'http://localhost:8080/api/listar-detallecuestionarios';
+  private urlEndPointListPreguntas: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-preguntas';
+  private urlEndPointListDetalleCuestionarioAll: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-detallecuestionarios';
 
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'});
 

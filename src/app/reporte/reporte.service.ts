@@ -12,9 +12,9 @@ import { Subcategoria } from './subcategoria';
 })
 export class ReporteService {
 
-  private urlEndPointListDetalleCuestionarioAll: string = 'http://localhost:8080/api/listar-detallecuestionarios';
+  private urlEndPointListDetalleCuestionarioAll: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-detallecuestionarios';
 
-  private urlListarSubcategorias: string = 'http://localhost:8080/api/listar-subcategorias';
+  private urlListarSubcategorias: string = 'https://springgcp-386623.rj.r.appspot.com/api/listar-subcategorias';
   
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'});
 
